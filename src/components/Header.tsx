@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { siteConfig } from "@/config/siteConfig";
 import { Button } from "./Button";
+import { Phone } from "lucide-react";
 
 export const Header = () => {
   return (
@@ -11,10 +12,15 @@ export const Header = () => {
             <div className="text-2xl font-bold text-foreground">
               {siteConfig.businessName}
             </div>
-            <div className="text-sm text-muted-foreground">
-              {siteConfig.city}
-            </div>
           </Link>
+          
+          <a 
+            href={`tel:${siteConfig.phone}`}
+            className="ml-auto flex items-center gap-1 text-sm font-semibold hidden md:flex hover:text-blue transition-colors"
+          >
+            <Phone className="w-4 h-4" />
+            {siteConfig.phone}
+          </a>
           
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-foreground hover:text-blue transition-colors">
