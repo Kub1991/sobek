@@ -122,5 +122,13 @@ export const siteConfig = {
     { name: "Meble loft & dekoracje", slug: "meble-loft" },
     { name: "Produkty użytkowe", slug: "produkty-uzytkowe" },
     { name: "Spawanie i naprawy", slug: "spawanie-naprawy" }
-  ]
+  ],
+
+  // ───────────────────────
+  // Domyślne wartości SEO
+  // ───────────────────────
+  seoDefault: {
+    title: "SEB-STAL-SPAW Stara Wiśniewka | Usługi spawalnicze i ślusarskie",
+    description: "SEB-STAL-SPAW to profesjonalne usługi spawalnicze i ślusarskie w Starej Wiśniewce. Projekt, produkcja i montaż konstrukcji stalowych, balustrad, bram i mebli loftowych. Bezpłatny pomiar w promieniu 60 km."
+  }
 };
