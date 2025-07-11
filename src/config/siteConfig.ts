@@ -13,7 +13,7 @@ export const siteConfig = {
   // ───────────────────────
   palette: {
     bg: "#FFFFFF",
-    accent1: "#FF6B00",   // pomarańcz główny
+    accent1: "#FF6B00",   // pomarańcz (RAL2004)
     accent2: "#4D4D4D"    // stalowy grafit
   },
 

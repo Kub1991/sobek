@@ -52,14 +52,10 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// SEB-STAL-SPAW brand colors - Orange
+				// Auto-Expert brand colors - Ford Blue
 				blue: {
 					DEFAULT: 'hsl(var(--blue-primary))',
 					hover: 'hsl(var(--blue-hover))'
-				},
-				orange: {
-					DEFAULT: 'hsl(22 100% 52%)',
-					hover: 'hsl(22 100% 47%)'
 				}
 			},
 			backgroundImage: {
