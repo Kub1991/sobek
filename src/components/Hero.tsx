@@ -2,7 +2,7 @@ import { Button } from "./Button";
 import { Phone } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
 
-const heroImage = "https://images.pexels.com/photos/3862627/pexels-photo-3862627.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop";
+const heroImage = "/src/assets/hero-workshop.jpg";
 
 export const Hero = () => {
   return (
@@ -11,9 +11,9 @@ export const Hero = () => {
         <img 
           src={heroImage} 
           alt="SEB-STAL-SPAW warsztat spawalniczy Stara Wiśniewka"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-hero opacity-30"></div>
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
