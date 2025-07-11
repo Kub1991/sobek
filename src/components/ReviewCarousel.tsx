@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { siteConfig } from "../config/siteConfig";
 
 const reviews = [
   {
