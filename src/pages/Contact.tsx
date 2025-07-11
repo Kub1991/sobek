@@ -25,8 +25,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen">
       <SeoHead 
-        title={`Kontakt – ${siteConfig.businessName} ${siteConfig.city}`}
-        description={`Skontaktuj się z ${siteConfig.businessName} w ${siteConfig.city}. Tel: ${siteConfig.phone}, ul. Główna 15. Formularz kontaktowy, mapa dojazdu. Pon-Pt: 8:00-17:00, Sob: 8:00-14:00.`}
+        title={`Kontakt – ${siteConfig.businessName}`}
+        description={`Skontaktuj się z ${siteConfig.businessName}. Tel: ${siteConfig.phone}, ul. Główna 15. Formularz kontaktowy, mapa dojazdu. Pon-Pt: 8:00-17:00, Sob: 8:00-14:00.`}
         structuredData={contactSchema}
       />
       <Header />

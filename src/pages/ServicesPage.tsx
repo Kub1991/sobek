@@ -28,8 +28,8 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen">
       <SeoHead
-        title="Usługi – SEB-STAL-SPAW Stara Wiśniewka | Balustrady, bramy, konstrukcje"
-        description="Pełna lista naszych usług: balustrady balkonowe i schodowe, bramy i furtki, konstrukcje stalowe, meble loft. Obsługujemy Starą Wiśniewkę i okolice. Umów pomiar online."
+        title="Usługi – SEB-STAL-SPAW | Balustrady, bramy, konstrukcje"
+        description="Pełna lista naszych usług: balustrady balkonowe i schodowe, bramy i furtki, konstrukcje stalowe, meble loft. Umów pomiar online."
         canonical="/uslugi"
         structuredData={servicesSchema}
       />

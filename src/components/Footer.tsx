@@ -21,7 +21,7 @@ export const Footer = () => {
               {siteConfig.categories.slice(0, 5).map((category) => (
                 <li key={category.slug}>
                   <Link
-                    to={`/uslugi/${category.slug}-${siteConfig.slugBase}`}
+                    to={`/${category.slug}`}
                     className="text-gray-300 hover:text-blue transition-colors"
                   >
                     {category.name}

@@ -45,7 +45,7 @@ export const SeoHead = ({ title, description, structuredData, canonical, noIndex
       }
       if (!description) {
         generatedDescription = siteConfig.seoDefault.description;
-      }
+      generatedDescription = `Profesjonalne ${service.name.toLowerCase()}. Kompleksowe usługi spawalnicze i ślusarskie z 3-letnią gwarancją.`;
     }
   }
   
