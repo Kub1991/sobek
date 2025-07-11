@@ -73,6 +73,7 @@ const ServiceCity = () => {
         title={`${service.name} ${city.name} – ${siteConfig.businessName}`}
         description={`Profesjonalne ${service.name.toLowerCase()} ${city.name} w warsztacie ${siteConfig.businessName}. Bezpłatny pomiar, projekt 3D, montaż z 3-letnią gwarancją. Zadzwoń ${siteConfig.phone}.`}
         structuredData={combinedSchema}
+        noIndex={true}
       />
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

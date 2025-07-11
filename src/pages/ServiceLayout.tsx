@@ -43,6 +43,7 @@ const ServiceLayout = () => {
         title={`${service.name} ${siteConfig.city} – ${siteConfig.businessName}`}
         description={`Profesjonalne ${service.name.toLowerCase()} w ${siteConfig.city}. ${siteConfig.businessName} oferuje kompleksowe usługi spawalnicze i ślusarskie z 3-letnią gwarancją.`}
         structuredData={serviceSchema}
+        noIndex={true}
       />
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

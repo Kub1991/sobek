@@ -6,15 +6,17 @@ interface SeoHeadProps {
   description: string;
   structuredData?: object;
   canonical?: string;
+  noIndex?: boolean;
 }
 
-export const SeoHead = ({ title, description, structuredData, canonical }: SeoHeadProps) => {
+export const SeoHead = ({ title, description, structuredData, canonical, noIndex = false }: SeoHeadProps) => {
   const fullTitle = title.includes(siteConfig.businessName) ? title : `${title} – ${siteConfig.businessName}`;
   
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {noIndex && <meta name="robots" content="noindex,nofollow" />}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
