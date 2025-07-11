@@ -30,7 +30,7 @@ export const ServicesGrid = ({ variant = "home" }: ServicesGridProps) => {
           {siteConfig.categories.map((category) => (
             <Link
               key={category.slug}
-              to={`/${category.slug}`}
+              to={`/uslugi/${category.slug}-${siteConfig.slugBase}`}
               className="group block"
             >
               <div className="bg-white rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 group-hover:scale-105">
