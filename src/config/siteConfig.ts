@@ -1,51 +1,73 @@
 export const siteConfig = {
-  businessName: "Serwis FORDZIK",
-  city: "Piła",
-  primaryCategory: "Warsztat samochodowy Ford",
-  slugBase: "pila",
-  phone: "67-123-45-67",
+  // ───────────────────────
+  // Dane firmowe
+  // ───────────────────────
+  businessName: "SEB-STAL-SPAW",
+  city: "Stara Wiśniewka",
+  primaryCategory: "Usługi spawalnicze i ślusarskie",
+  slugBase: "stara-wisniewka",
+  phone: "+48 786 618 536",
+
+  // ───────────────────────
+  // Kolorystyka (stal + pomarańcz akcent)
+  // ───────────────────────
   palette: {
     bg: "#FFFFFF",
-    accent1: "#0074D9",   // niebieski (Ford Blue)
-    accent2: "#000000"
+    accent1: "#FF6B00",   // pomarańcz (RAL2004)
+    accent2: "#4D4D4D"    // stalowy grafit
   },
 
-  // ► USP-y w hero i sekcji korzyści
+  // ───────────────────────
+  // USP – pokazywane w hero i sekcji korzyści
+  // ───────────────────────
   usp: [
-    "Specjalizacja Ford - wszystkie modele",
-    "Części oryginalne i zamienniki",
-    "Członek sieci ProfiAuto",
-    "Nowoczesny sprzęt diagnostyczny"
+    "Projekt, produkcja i montaż w jednym miejscu",
+    "Stal czarna, nierdzewna i malowanie proszkowe",
+    "Bezpłatny pomiar w promieniu 60 km",
+    "3-letnia gwarancja na spawy i powłoki"
   ],
 
-  // ► Kategorie (kafelki na stronie głównej)
+  // ───────────────────────
+  // Kategorie (kafelki na stronie głównej)
+  // ───────────────────────
   categories: [
-    { name: "Diagnostyka komputerowa", slug: "diagnostyka-komputerowa" },
-    { name: "Przeglądy serwisowe",     slug: "przeglady-serwisowe" },
-    { name: "Płyny eksploatacyjne",    slug: "plyny-eksploatacyjne" },
-    { name: "Klimatyzacja",            slug: "klimatyzacja" },
-    { name: "Układ hamulcowy",         slug: "hamulce" },
-    { name: "Układ kierowniczy",       slug: "kierowniczy" },
-    { name: "Zawieszenie",             slug: "zawieszenie" },
-    { name: "Mechanika ogólna",        slug: "mechanika" }
+    { name: "Balustrady i ogrodzenia",      slug: "balustrady-ogrodzenia" },
+    { name: "Bramy i furtki",               slug: "bramy-furtki" },
+    { name: "Konstrukcje i zadaszenia",     slug: "konstrukcje" },
+    { name: "Meble loft & dekoracje",       slug: "meble-loft" },
+    { name: "Produkty użytkowe",            slug: "produkty-uzytkowe" },
+    { name: "Spawanie i naprawy",           slug: "spawanie-naprawy" }
   ],
 
-  // ► Usługi (podstrony long-tail w ramach kategorii)
+  // ───────────────────────
+  // Usługi (long-tail podstrony)
+  // ───────────────────────
   services: [
-    // Diagnostyka
-    { name: "Diagnostyka silników benzynowych", slug: "diagnostyka-benzyna", parentCategorySlug: "diagnostyka-komputerowa" },
+    // Balustrady i ogrodzenia
+    { name: "Balustrady balkonowe stalowe",        slug: "balustrady-balkonowe",      parentCategorySlug: "balustrady-ogrodzenia" },
+    { name: "Balustrady schodowe wewnętrzne",      slug: "balustrady-schodowe",       parentCategorySlug: "balustrady-ogrodzenia" },
+    { name: "Ogrodzenia posesyjne z elementami ozdobnymi", slug: "ogrodzenia-posesyjne", parentCategorySlug: "balustrady-ogrodzenia" },
 
-    // Płyny
-    { name: "Wymiana oleju silnikowego",        slug: "wymiana-oleju",      parentCategorySlug: "plyny-eksploatacyjne" },
+    // Bramy i furtki
+    { name: "Bramy przesuwne z automatyką",         slug: "bramy-przesuwne",           parentCategorySlug: "bramy-furtki" },
+    { name: "Bramy dwuskrzydłowe",                  slug: "bramy-dwuskrzydlowe",       parentCategorySlug: "bramy-furtki" },
+    { name: "Furtki ogrodowe stalowe",             slug: "furtki-ogrodowe",           parentCategorySlug: "bramy-furtki" },
 
-    // Klimatyzacja
-    { name: "Odgrzybianie klimatyzacji",        slug: "odgrzybianie-klimy", parentCategorySlug: "klimatyzacja" },
+    // Konstrukcje i zadaszenia
+    { name: "Konstrukcje stalowe schodów",          slug: "konstrukcje-schodow",       parentCategorySlug: "konstrukcje" },
+    { name: "Zadaszenia i wiaty metalowe",          slug: "zadaszenia-wiaty",          parentCategorySlug: "konstrukcje" },
+    { name: "Pergole i altany stalowe",             slug: "pergole-altany",            parentCategorySlug: "konstrukcje" },
 
-    // Hamulce
-    { name: "Wymiana klocków hamulcowych",      slug: "wymiana-klockow",    parentCategorySlug: "hamulce" },
-    { name: "Regeneracja zacisków hamulcowych", slug: "regeneracja-zaciskow", parentCategorySlug: "hamulce" },
+    // Meble loft & dekoracje
+    { name: "Stoły loft z blatem dębowym",          slug: "stoly-loft",                parentCategorySlug: "meble-loft" },
+    { name: "Półki industrialne",                   slug: "polki-industrialne",        parentCategorySlug: "meble-loft" },
 
-    // Zawieszenie
-    { name: "Geometria kół 3D",                 slug: "geometria-kol",      parentCategorySlug: "zawieszenie" },
+    // Produkty użytkowe
+    { name: "Kratki ochronne na okna",              slug: "kratki-ochronne",           parentCategorySlug: "produkty-uzytkowe" },
+    { name: "Osłony techniczne i obudowy",          slug: "oslony-techniczne",         parentCategorySlug: "produkty-uzytkowe" },
+
+    // Spawanie i naprawy
+    { name: "Spawanie konstrukcji stalowych",       slug: "spawanie-konstrukcji",      parentCategorySlug: "spawanie-naprawy" },
+    { name: "Naprawa i renowacja elementów metalowych", slug: "naprawa-renowacja",   parentCategorySlug: "spawanie-naprawy" }
   ]
 };
