@@ -2,7 +2,7 @@ import { Button } from "./Button";
 import { Phone } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
 
-const heroImage = "/src/assets/hero-workshop.jpg";
+const heroImage = "/hero-workshop.jpg";
 
 export const Hero = () => {
   return (
