@@ -35,6 +35,10 @@ export const siteConfig = {
       slug: "balustrady",
       name: "Balustrady",
       group: "Balustrady",
+      localDesc: {
+        "zlotow": "Profesjonalne balustrady Złotów realizowane przez SEB-STAL-SPAW. Nasze wieloletnie doświadczenie w Złotowie obejmuje wykonanie setek metrów bieżących balustrad balkonowych, schodowych i tarasowych. Wykorzystujemy najwyższej jakości stal czarną i nierdzewną, oferując również malowanie proszkowe w pełnej gamie kolorów RAL. Mieszkańcy Złotowa doceniają naszą punktualność, rzetelność i konkurencyjne ceny. Każda balustrada jest projektowana indywidualnie, uwzględniając specyfikę budynku i preferencje właściciela.",
+        "pila": "Balustrady Piła to nasza specjalność od wielu lat. W Pile zrealizowaliśmy dziesiątki projektów balustrad dla budynków mieszkalnych, biurowców i obiektów przemysłowych. Oferujemy kompleksową obsługę - od pomiarów przez projekt aż po montaż z gwarancją. Mieszkańcy Piły wybierają nas ze względu na profesjonalne podejście, terminowość realizacji i atrakcyjne ceny. Nasze balustrady charakteryzują się nie tylko wysoką jakością wykonania, ale również nowoczesnym designem dopasowanym do architektury budynku."
+      },
       subservices: [
         { slug: "balustrady-schodowe-wewnetrzne", name: "Balustrady schodowe wewnętrzne" },
         { slug: "balustrady-schodowe-zewnetrzne", name: "Balustrady schodowe zewnętrzne" },
@@ -46,6 +50,10 @@ export const siteConfig = {
       slug: "ogrodzenia",
       name: "Ogrodzenia i bramy",
       group: "Ogrodzenia",
+      localDesc: {
+        "zlotow": "Ogrodzenia i bramy Złotów - kompleksowe rozwiązania dla Twojej posesji. W Złotowie wykonaliśmy setki metrów ogrodzeń posesyjnych, bram przesuwnych i dwuskrzydłowych. Specjalizujemy się w nowoczesnych konstrukcjach stalowych z automatyką najlepszych marek. Mieszkańcy Złotowa cenią nas za rzetelność, terminowość i konkurencyjne ceny. Każde ogrodzenie projektujemy indywidualnie, uwzględniając specyfikę terenu i wymagania bezpieczeństwa.",
+        "pila": "Profesjonalne ogrodzenia i bramy Piła od SEB-STAL-SPAW. W Pile jesteśmy rozpoznawalną marką w branży ogrodzeń stalowych. Oferujemy pełen zakres usług - od projektowania przez produkcję aż po montaż z automatyką. Nasze ogrodzenia wyróżniają się wysoką jakością wykonania i nowoczesnym designem. Klienci z Piły doceniają naszą fachowość, punktualność i uczciwe ceny."
+      },
       subservices: [
         { slug: "bramy-jednoskrzydlowe", name: "Bramy wjazdowe jednoskrzydłowe" },
         { slug: "bramy-dwuskrzydlowe", name: "Bramy wjazdowe dwuskrzydłowe" },

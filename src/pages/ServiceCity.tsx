@@ -104,14 +104,41 @@ const ServiceCity = () => {
                 Obsługujemy klientów w {city.name} i okolicach, oferując kompleksowe usługi z zakresu {service.group.toLowerCase()}.
                 Bezpłatny pomiar, projekt 3D i montaż z 3-letnią gwarancją.
               </p>
-              <p className="text-muted-foreground mb-4">
-                Nasze doświadczenie w {city.name} obejmuje realizację projektów różnej skali – 
-                od prostych konstrukcji po skomplikowane zadania architektoniczne. 
-                Wykorzystujemy najwyższej jakości materiały: stal czarna, nierdzewna oraz malowanie proszkowe w kolorach RAL.
+            </div>
+
+            {/* Sekcja: Treść lokalna */}
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-foreground mb-6">
+                Nasze doświadczenie w {city.name}
+              </h2>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                {service.localDesc && service.localDesc[city.slug] 
+                  ? service.localDesc[city.slug]
+                  : `Profesjonalne ${service.name.toLowerCase()} ${city.name} to nasza specjalność. W ${city.name} zrealizowaliśmy dziesiątki projektów dla klientów indywidualnych i firm. Nasze wieloletnie doświadczenie w ${city.name} pozwala nam oferować najwyższą jakość usług spawalniczych i ślusarskich. Mieszkańcy ${city.name} doceniają naszą rzetelność, terminowość i konkurencyjne ceny. Każdy projekt realizujemy z pełnym zaangażowaniem, wykorzystując najnowocześniejsze technologie spawalnicze i najwyższej jakości materiały. Oferujemy kompleksową obsługę - od pomiarów przez projekt aż po montaż z gwarancją.`
+                }
               </p>
-              <p className="text-muted-foreground">
-                Każda realizacja w {city.name} objęta jest 3-letnią gwarancją na spawy i powłoki. 
-                Oferujemy bezpłatny transport konstrukcji oraz profesjonalny montaż przez wykwalifikowanych spawaczy.
+            </div>
+
+            {/* Galeria realizacji */}
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-foreground mb-6">
+                Galeria realizacji w {city.name}
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                {[1, 2, 3, 4].map((index) => (
+                  <div key={index} className="relative group">
+                    <img
+                      src={`https://images.pexels.com/photos/${3862627 + index}/pexels-photo-${3862627 + index}.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop`}
+                      alt={`${service.name} ${city.name} - realizacja ${index}`}
+                      loading="lazy"
+                      className="w-full h-48 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300 rounded-lg"></div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground mt-4 text-center">
+                Przykładowe realizacje {service.name.toLowerCase()} w {city.name} i okolicach
               </p>
             </div>
 
