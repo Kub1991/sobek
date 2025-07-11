@@ -18,7 +18,7 @@ export const Hero = () => {
           }}
           onLoad={() => console.log('Main background załadowany pomyślnie')}
         />
-        <div className="absolute inset-0 bg-gradient-hero opacity-40"></div>
+        <div className="absolute inset-0 bg-gradient-hero opacity-20"></div>
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
