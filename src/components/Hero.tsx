@@ -2,7 +2,7 @@ import { Button } from "./Button";
 import { Phone } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
 
-const heroImage = "/hero-workshop.jpg";
+const heroImage = "/main background.png";
 
 export const Hero = () => {
   return (
@@ -10,13 +10,13 @@ export const Hero = () => {
       <div className="absolute inset-0">
         <img 
           src={heroImage} 
-          alt="SEB-STAL-SPAW warsztat spawalniczy Stara Wiśniewka"
+          alt="SEB-STAL-SPAW warsztat spawalniczy Stara Wiśniewka - main background"
           className="w-full h-full object-cover"
           onError={(e) => {
-            console.error('Błąd ładowania obrazka:', e);
+            console.error('Błąd ładowania main background:', e);
             e.currentTarget.style.display = 'none';
           }}
-          onLoad={() => console.log('Obrazek załadowany pomyślnie')}
+          onLoad={() => console.log('Main background załadowany pomyślnie')}
         />
         <div className="absolute inset-0 bg-gradient-hero opacity-40"></div>
       </div>
