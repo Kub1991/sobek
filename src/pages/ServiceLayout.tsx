@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ServiceBreadcrumb } from "@/components/ServiceBreadcrumb";
 import { ServiceForm } from "@/components/ServiceForm";
+import { CitiesLinks } from "@/components/CitiesLinks";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { siteConfig } from "@/config/siteConfig";
 import { Link } from "react-router-dom";
@@ -122,6 +123,8 @@ const ServiceLayout = () => {
                 ))}
               </div>
             </div>
+
+            <CitiesLinks serviceSlug={service.slug} />
 
             <div className="bg-secondary rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-foreground mb-4">Dlaczego warto wybrać nas?</h2>

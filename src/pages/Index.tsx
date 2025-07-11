@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { ServicesGrid } from "@/components/ServicesGrid";
+import { AreasSection } from "@/components/AreasSection";
 import { ReviewCarousel } from "@/components/ReviewCarousel";
 import { FAQ } from "@/components/FAQ";
 import { Footer } from "@/components/Footer";
@@ -89,6 +90,7 @@ const Index = () => {
         <Hero />
         <ProcessSteps />
         <ServicesGrid variant="home" />
+        <AreasSection />
         <ReviewCarousel />
         <FAQ />
       </main>
