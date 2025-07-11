@@ -30,7 +30,7 @@ export const Header = () => {
           </nav>
 
           <a href={`tel:${siteConfig.phone}`}>
-            <Button variant="primary">
+            <Button variant="primary" className="hidden md:flex">
               {siteConfig.phone}
             </Button>
           </a>
