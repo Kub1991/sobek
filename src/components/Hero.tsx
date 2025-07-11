@@ -25,7 +25,12 @@ export const Hero = () => {
             <h2 className="text-2xl lg:text-3xl font-semibold mb-4 opacity-90">
               Projekt, spawanie i montaż na wymiar. Bezpłatny pomiar do 60 km.
             </h2>
-            {/* Mikro-CTA z numerem usunięte - zastąpione przez header (desktop) i sticky call (mobile) */}
+            {/* Mikro-CTA z numerem telefonu usunięte - zastąpione przez header (desktop) i sticky call (mobile) */}
+            
+            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+              {siteConfig.usp.map((usp, index) => (
+                <div key={index} className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-white rounded-full"></div>
                   <span>{usp}</span>
                 </div>
               ))}
