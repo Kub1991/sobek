@@ -8,6 +8,8 @@ import AboutUs from "./pages/AboutUs";
 import Contact from "./pages/Contact";
 import ServicesPage from "./pages/ServicesPage";
 import NotFound from "./pages/NotFound";
+import ServiceLayout from "./pages/ServiceLayout";
+import ServiceCity from "./pages/ServiceCity";
 
 // Category pages
 import BalustradyOgrodzenia from "./pages/categories/BalustradyOgrodzenia";
@@ -38,6 +40,10 @@ const App = () => (
           <Route path="/uslugi" element={<ServicesPage />} />
           <Route path="/o-nas" element={<AboutUs />} />
           <Route path="/kontakt" element={<Contact />} />
+          
+          {/* Dynamic routing for services and cities */}
+          <Route path="/:serviceSlug" element={<ServiceLayout />} />
+          <Route path="/:serviceSlug/:citySlug" element={<ServiceCity />} />
           
           {/* Category pages */}
           <Route path="/uslugi/balustrady-ogrodzenia-stara-wisniewka" element={<BalustradyOgrodzenia />} />

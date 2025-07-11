@@ -28,46 +28,91 @@ export const siteConfig = {
   ],
 
   // ───────────────────────
-  // Kategorie (kafelki na stronie głównej)
+  // Nowa struktura usług z dynamicznym routingiem
   // ───────────────────────
-  categories: [
-    { name: "Balustrady i ogrodzenia",      slug: "balustrady-ogrodzenia" },
-    { name: "Bramy i furtki",               slug: "bramy-furtki" },
-    { name: "Konstrukcje i zadaszenia",     slug: "konstrukcje" },
-    { name: "Meble loft & dekoracje",       slug: "meble-loft" },
-    { name: "Produkty użytkowe",            slug: "produkty-uzytkowe" },
-    { name: "Spawanie i naprawy",           slug: "spawanie-naprawy" }
+  services: [
+    {
+      slug: "balustrady",
+      name: "Balustrady",
+      group: "Balustrady",
+      subservices: [
+        { slug: "balustrady-schodowe-wewnetrzne", name: "Balustrady schodowe wewnętrzne" },
+        { slug: "balustrady-schodowe-zewnetrzne", name: "Balustrady schodowe zewnętrzne" },
+        { slug: "balustrady-balkonowe", name: "Balustrady balkonowe" },
+        { slug: "balustrady-tarasowe", name: "Balustrady tarasowe" }
+      ]
+    },
+    {
+      slug: "ogrodzenia",
+      name: "Ogrodzenia i bramy",
+      group: "Ogrodzenia",
+      subservices: [
+        { slug: "bramy-jednoskrzydlowe", name: "Bramy wjazdowe jednoskrzydłowe" },
+        { slug: "bramy-dwuskrzydlowe", name: "Bramy wjazdowe dwuskrzydłowe" },
+        { slug: "bramy-przesuwne", name: "Bramy przesuwne i rozsuwane" },
+        { slug: "furtki-ogrodowe", name: "Furtki ogrodowe" },
+        { slug: "przesla-ogrodzeniowe", name: "Przęsła ogrodzeniowe" }
+      ]
+    },
+    {
+      slug: "konstrukcje-stalowe",
+      name: "Konstrukcje stalowe",
+      group: "Konstrukcje",
+      subservices: [
+        { slug: "schody-stalowe", name: "Konstrukcje stalowe schodów" },
+        { slug: "antresole", name: "Platformy i antresole" },
+        { slug: "zadaszenia-wiaty", name: "Zadaszenia i wiaty" },
+        { slug: "pergole-altany", name: "Pergole i altany" }
+      ]
+    },
+    {
+      slug: "meble-loft",
+      name: "Meble loft",
+      group: "Meble",
+      subservices: [
+        { slug: "stoly", name: "Stoły loft" },
+        { slug: "krzesla", name: "Krzesła loft" },
+        { slug: "polki", name: "Półki loft" },
+        { slug: "dekoracje", name: "Elementy dekoracyjne" }
+      ]
+    },
+    {
+      slug: "uslugi-spawalnicze",
+      name: "Usługi spawalnicze",
+      group: "Spawanie",
+      subservices: [
+        { slug: "spawanie-konstrukcji", name: "Spawanie konstrukcji stalowych (TIG/MIG)" },
+        { slug: "naprawy-renowacje", name: "Naprawa i renowacja elementów metalowych" },
+        { slug: "montaz", name: "Montaż i instalacja" }
+      ]
+    }
   ],
 
   // ───────────────────────
-  // Usługi (long-tail podstrony)
+  // Obsługiwane miasta
   // ───────────────────────
-  services: [
-    // Balustrady i ogrodzenia
-    { name: "Balustrady balkonowe stalowe",        slug: "balustrady-balkonowe",      parentCategorySlug: "balustrady-ogrodzenia" },
-    { name: "Balustrady schodowe wewnętrzne",      slug: "balustrady-schodowe",       parentCategorySlug: "balustrady-ogrodzenia" },
-    { name: "Ogrodzenia posesyjne z elementami ozdobnymi", slug: "ogrodzenia-posesyjne", parentCategorySlug: "balustrady-ogrodzenia" },
+  cities: [
+    { slug: "zlotow", name: "Złotów" },
+    { slug: "pila", name: "Piła" },
+    { slug: "zakrzewo", name: "Zakrzewo" },
+    { slug: "okonek", name: "Okonek" },
+    { slug: "debrzno", name: "Debrzno" },
+    { slug: "chojnice", name: "Chojnice" },
+    { slug: "krajenka", name: "Krajenka" },
+    { slug: "jastrowie", name: "Jastrowie" },
+    { slug: "ledyczek", name: "Lędyczek" },
+    { slug: "walcz", name: "Wałcz" }
+  ],
 
-    // Bramy i furtki
-    { name: "Bramy przesuwne z automatyką",         slug: "bramy-przesuwne",           parentCategorySlug: "bramy-furtki" },
-    { name: "Bramy dwuskrzydłowe",                  slug: "bramy-dwuskrzydlowe",       parentCategorySlug: "bramy-furtki" },
-    { name: "Furtki ogrodowe stalowe",             slug: "furtki-ogrodowe",           parentCategorySlug: "bramy-furtki" },
-
-    // Konstrukcje i zadaszenia
-    { name: "Konstrukcje stalowe schodów",          slug: "konstrukcje-schodow",       parentCategorySlug: "konstrukcje" },
-    { name: "Zadaszenia i wiaty metalowe",          slug: "zadaszenia-wiaty",          parentCategorySlug: "konstrukcje" },
-    { name: "Pergole i altany stalowe",             slug: "pergole-altany",            parentCategorySlug: "konstrukcje" },
-
-    // Meble loft & dekoracje
-    { name: "Stoły loft z blatem dębowym",          slug: "stoly-loft",                parentCategorySlug: "meble-loft" },
-    { name: "Półki industrialne",                   slug: "polki-industrialne",        parentCategorySlug: "meble-loft" },
-
-    // Produkty użytkowe
-    { name: "Kratki ochronne na okna",              slug: "kratki-ochronne",           parentCategorySlug: "produkty-uzytkowe" },
-    { name: "Osłony techniczne i obudowy",          slug: "oslony-techniczne",         parentCategorySlug: "produkty-uzytkowe" },
-
-    // Spawanie i naprawy
-    { name: "Spawanie konstrukcji stalowych",       slug: "spawanie-konstrukcji",      parentCategorySlug: "spawanie-naprawy" },
-    { name: "Naprawa i renowacja elementów metalowych", slug: "naprawa-renowacja",   parentCategorySlug: "spawanie-naprawy" }
+  // ───────────────────────
+  // Stara struktura kategorii (kompatybilność wsteczna)
+  // ───────────────────────
+  categories: [
+    { name: "Balustrady i ogrodzenia", slug: "balustrady-ogrodzenia" },
+    { name: "Bramy i furtki", slug: "bramy-furtki" },
+    { name: "Konstrukcje i zadaszenia", slug: "konstrukcje" },
+    { name: "Meble loft & dekoracje", slug: "meble-loft" },
+    { name: "Produkty użytkowe", slug: "produkty-uzytkowe" },
+    { name: "Spawanie i naprawy", slug: "spawanie-naprawy" }
   ]
 };
