@@ -14,14 +14,6 @@ export const Header = () => {
             </div>
           </Link>
           
-          <a 
-            href={`tel:${siteConfig.phone}`}
-            className="ml-auto flex items-center gap-1 text-sm font-semibold hidden md:flex hover:text-blue transition-colors"
-          >
-            <Phone className="w-4 h-4" />
-            {siteConfig.phone}
-          </a>
-          
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-foreground hover:text-blue transition-colors">
               Strona główna
