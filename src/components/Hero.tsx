@@ -26,6 +26,11 @@ export const Hero = () => {
               Projekt, spawanie i montaż na wymiar. Bezpłatny pomiar do 60 km.
             </h2>
             <p className="mt-2 flex items-center gap-2 text-lg font-semibold mb-8">
+              <Phone className="w-5 h-5" />
+              <a href="tel:+48786618536" className="hover:underline">
+                +48 786 618 536
+              </a>
+            </p>
             <p className="mt-2 flex items-center gap-2 text-lg font-semibold mb-8 md:hidden">
               <Phone className="w-5 h-5" />
               <a href="tel:+48786618536" className="hover:underline">
