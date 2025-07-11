@@ -12,8 +12,13 @@ export const Hero = () => {
           src={heroImage} 
           alt="SEB-STAL-SPAW warsztat spawalniczy Stara Wiśniewka"
           className="w-full h-full object-cover"
+          onError={(e) => {
+            console.error('Błąd ładowania obrazka:', e);
+            e.currentTarget.style.display = 'none';
+          }}
+          onLoad={() => console.log('Obrazek załadowany pomyślnie')}
         />
-        <div className="absolute inset-0 bg-gradient-hero opacity-30"></div>
+        <div className="absolute inset-0 bg-gradient-hero opacity-40"></div>
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -25,7 +30,6 @@ export const Hero = () => {
             <h2 className="text-2xl lg:text-3xl font-semibold mb-4 opacity-90">
               Projekt, spawanie i montaż na wymiar. Bezpłatny pomiar do 60 km.
             </h2>
-            {/* Mikro-CTA z numerem telefonu usunięte - zastąpione przez header (desktop) i sticky call (mobile) */}
             
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
               {siteConfig.usp.map((usp, index) => (
