@@ -1,64 +1,44 @@
 import { Link } from "react-router-dom";
-import { SeoHead } from "@/components/SeoHead";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ServiceBreadcrumb } from "@/components/ServiceBreadcrumb";
 import { siteConfig } from "@/config/siteConfig";
 
-const Klimatyzacja = () => {
-  const category = siteConfig.categories.find(cat => cat.slug === "klimatyzacja");
-  const services = siteConfig.services.filter(service => service.parentCategorySlug === "klimatyzacja");
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `Klimatyzacja ${siteConfig.city}`,
-    "description": `Serwis klimatyzacji samochodowej w ${siteConfig.city}. Odgrzybianie, napełnianie czynnikiem, diagnostyka układów klimatyzacji.`,
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": siteConfig.businessName,
-      "telephone": siteConfig.phone
-    },
-    "areaServed": siteConfig.city,
-    "serviceType": "Automotive Air Conditioning Service"
-  };
+const BramyFurtki = () => {
+  const category = siteConfig.categories.find(cat => cat.slug === "bramy-furtki");
+  const services = siteConfig.services.filter(service => service.parentCategorySlug === "bramy-furtki");
 
   return (
     <div className="min-h-screen">
-      <SeoHead 
-        title={`Klimatyzacja ${siteConfig.city} – ${siteConfig.businessName}`}
-        description={`Serwis klimatyzacja ${siteConfig.city} w ${siteConfig.businessName} - kompleksowa obsługa systemów klimatyzacji samochodowej. Odgrzybianie, napełnianie czynnikiem chłodniczym, diagnostyka układów klimatyzacji wszystkich marek pojazdów.`}
-        structuredData={serviceSchema}
-      />
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <ServiceBreadcrumb categoryName="Klimatyzacja" categorySlug="klimatyzacja" />
+        <ServiceBreadcrumb categoryName="Bramy i furtki" categorySlug="bramy-furtki" />
         
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">
-            Klimatyzacja Piła – Serwis FORDZIK
+            Bramy i furtki Stara Wiśniewka – SEB-STAL-SPAW
           </h1>
           <div className="prose prose-lg max-w-none">
             <p className="text-muted-foreground mb-6">
-              Serwis klimatyzacja Piła w Serwisie FORDZIK - kompleksowa obsługa systemów klimatyzacji 
-              samochodowej. Oferujemy odgrzybianie, napełnianie czynnikiem chłodniczym oraz diagnostykę 
-              układów klimatyzacji wszystkich marek pojazdów.
+              Profesjonalne bramy i furtki Stara Wiśniewka w SEB-STAL-SPAW. Specjalizujemy się w 
+              projektowaniu i montażu bram przesuwnych z automatyką, bram dwuskrzydłowych oraz furtek 
+              ogrodowych. Oferujemy kompleksową obsługę od pomiarów przez produkcję po montaż z automatyką.
             </p>
             <p className="text-muted-foreground mb-6">
-              Dysponujemy nowoczesnym sprzętem do obsługi zarówno starszych systemów R134a jak i 
-              najnowszych R1234yf. Każda usługa wykonywana jest przez wykwalifikowanych mechaników 
-              z wieloletnim doświadczeniem w serwisie klimatyzacji samochodowej.
+              Dysponujemy nowoczesnym sprzętem do produkcji konstrukcji stalowych różnej wielkości. 
+              Wykonujemy bramy ze stali czarnej i nierdzewnej z możliwością wypełnienia różnymi materiałami. 
+              Każda brama objęta jest 3-letnią gwarancją na konstrukcję i automatykę.
             </p>
           </div>
         </div>
 
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-foreground mb-6">Usługi klimatyzacji samochodowej</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Usługi bram i furtek</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {services.map((service) => (
               <Link
                 key={service.slug}
-                to={`/uslugi/${service.slug}-pila`}
+                to={`/uslugi/${service.slug}-${siteConfig.slugBase}`}
                 className="group block"
               >
                 <div className="bg-white rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 group-hover:scale-105">
@@ -66,7 +46,7 @@ const Klimatyzacja = () => {
                     {service.name}
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Profesjonalna {service.name.toLowerCase()} w Pile z gwarancją
+                    Profesjonalna {service.name.toLowerCase()} w Starej Wiśniewce z gwarancją
                   </p>
                   <div className="flex items-center text-blue group-hover:underline">
                     <span>Zobacz szczegóły</span>
@@ -96,4 +76,4 @@ const Klimatyzacja = () => {
   );
 };
 
-export default Klimatyzacja;
+export default BramyFurtki;

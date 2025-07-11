@@ -8,15 +8,15 @@ const ServicesPage = () => {
   const servicesSchema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": `Usługi serwisowe ${siteConfig.city}`,
-    "description": `Kompleksowe usługi serwisowe dla samochodów Ford w ${siteConfig.city}`,
+    "name": `Usługi spawalnicze ${siteConfig.city}`,
+    "description": `Kompleksowe usługi spawalnicze i ślusarskie w ${siteConfig.city}`,
     "itemListElement": siteConfig.categories.map((category, index) => ({
       "@type": "ListItem",
       "position": index + 1,
       "item": {
         "@type": "Service",
         "name": category.name,
-        "description": `Profesjonalne usługi ${category.name.toLowerCase()} w ${siteConfig.city}`,
+        "description": `Profesjonalna ${category.name.toLowerCase()} w ${siteConfig.city}`,
         "provider": {
           "@type": "LocalBusiness",
           "name": siteConfig.businessName
@@ -28,8 +28,8 @@ const ServicesPage = () => {
   return (
     <div className="min-h-screen">
       <SeoHead
-        title="Usługi – Serwis FORDZIK Piła | Diagnostyka, hamulce, klimatyzacja"
-        description="Pełna lista naszych usług: diagnostyka komputerowa silnika, wymiana oleju, serwis hamulców i klimatyzacji. Obsługujemy Piłę i okolice. Umów wizytę online."
+        title="Usługi – SEB-STAL-SPAW Stara Wiśniewka | Balustrady, bramy, konstrukcje"
+        description="Pełna lista naszych usług: balustrady balkonowe i schodowe, bramy i furtki, konstrukcje stalowe, meble loft. Obsługujemy Starą Wiśniewkę i okolice. Umów pomiar online."
         canonical="/uslugi"
         structuredData={servicesSchema}
       />
@@ -41,17 +41,16 @@ const ServicesPage = () => {
               Usługi – {siteConfig.businessName}
             </h1>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto mb-8">
-              Nasz serwis samochodowy w Piłe specjalizuje się w pełnej obsłudze pojazdów
-              osobowych i dostawczych. Oferujemy komputerową diagnostykę silników
-              benzynowych i diesla, szybkie serwisy wymiany oleju z kontrolą płynów
-              eksploatacyjnych, naprawy układu hamulcowego oraz kompleksowy serwis
-              klimatyzacji R134a i R1234yf. Każdą usługę wykonujemy zgodnie z procedurą OEM,
-              używając części premium i narzędzi dedykowanych do Twojej marki auta.
-              Klientom zapewniamy dwuletnią gwarancję na części i robociznę, a także
-              bezpłatną diagnostykę wstępną przy każdej wizycie. Pracujemy od poniedziałku
-              do soboty, a termin możesz zarezerwować online w 60 sekund. Sprawdź pełną
-              listę usług poniżej i umów wizytę – obsługujemy kierowców z Piły, Złotowa oraz
-              całej północnej Wielkopolski.
+              Nasza firma w Starej Wiśniewce specjalizuje się w kompleksowej realizacji projektów 
+              z zakresu spawalnictwa i ślusarstwa. Oferujemy projektowanie, produkcję i montaż 
+              balustrad balkonowych i schodowych, bram przesuwnych i dwuskrzydłowych, konstrukcji 
+              stalowych, zadaszenia, pergoli oraz mebli w stylu loft. Każdy projekt realizujemy 
+              od podstaw, używając najwyższej jakości stali czarnej i nierdzewnej oraz oferujemy 
+              malowanie proszkowe w dowolnym kolorze RAL. Klientom zapewniamy trzyletnią gwarancję 
+              na spawy i powłoki, a także bezpłatny pomiar w promieniu 60 km. Pracujemy od 
+              poniedziałku do soboty, a termin możesz umówić online w 60 sekund. Sprawdź pełną 
+              listę usług poniżej i umów pomiar – obsługujemy klientów ze Starej Wiśniewki, 
+              Iławy oraz całych Warmii i Mazur.
             </p>
           </div>
 
@@ -65,7 +64,7 @@ const ServicesPage = () => {
                 Dlaczego wybrać {siteConfig.businessName}?
               </h2>
               <p className="text-muted-foreground">
-                Jesteśmy członkami sieci ProfiAuto, co zapewnia dostęp do najlepszych części i najnowszych technologii
+                Realizujemy projekty stalowe od podstaw, łącząc tradycyjne techniki spawalnicze z nowoczesnymi technologiami
               </p>
             </div>
             

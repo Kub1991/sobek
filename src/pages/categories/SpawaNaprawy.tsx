@@ -4,41 +4,42 @@ import { Footer } from "@/components/Footer";
 import { ServiceBreadcrumb } from "@/components/ServiceBreadcrumb";
 import { siteConfig } from "@/config/siteConfig";
 
-const Elektryka = () => {
-  const category = siteConfig.categories.find(cat => cat.slug === "elektryka");
-  const services = siteConfig.services.filter(service => service.parentCategorySlug === "elektryka");
+const SpawaNaprawy = () => {
+  const category = siteConfig.categories.find(cat => cat.slug === "spawanie-naprawy");
+  const services = siteConfig.services.filter(service => service.parentCategorySlug === "spawanie-naprawy");
 
   return (
     <div className="min-h-screen">
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <ServiceBreadcrumb categoryName="Elektryka" categorySlug="elektryka" />
+        <ServiceBreadcrumb categoryName="Spawanie i naprawy" categorySlug="spawanie-naprawy" />
         
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">
-            Elektryka Piła – Serwis FORDZIK
+            Spawanie i naprawy Stara Wiśniewka – SEB-STAL-SPAW
           </h1>
           <div className="prose prose-lg max-w-none">
             <p className="text-muted-foreground mb-6">
-              Profesjonalna elektryka Piła w Serwisie FORDZIK. Specjalizujemy się w 
-              naprawie układów elektrycznych samochodów wszystkich marek. Oferujemy wymianę 
-              akumulatorów, naprawę alternatora, rozrusznika oraz diagnostykę instalacji elektrycznej.
+              Profesjonalne spawanie i naprawy Stara Wiśniewka w SEB-STAL-SPAW - kompleksowe 
+              usługi spawalnicze i naprawy konstrukcji metalowych. Specjalizujemy się w spawaniu 
+              konstrukcji stalowych, naprawach i renowacji elementów metalowych.
             </p>
             <p className="text-muted-foreground mb-6">
-              Dysponujemy nowoczesnym sprzętem diagnostycznym do lokalizacji awarii elektrycznych. 
-              Wykonujemy regenerację alternatorów i rozruszników, wymianę akumulatorów oraz 
-              naprawę systemów oświetlenia i instalacji dodatkowych.
+              Oferujemy spawanie metodami MIG/MAG, TIG oraz elektrodą otuloną. Wykonujemy naprawy 
+              uszkodzonych konstrukcji stalowych, renowację starych elementów metalowych oraz 
+              wzmacnianie istniejących konstrukcji. Każda naprawa wykonywana jest z zachowaniem 
+              najwyższych standardów jakości.
             </p>
           </div>
         </div>
 
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-foreground mb-6">Usługi elektryczne</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Usługi spawalnicze</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {services.map((service) => (
               <Link
                 key={service.slug}
-                to={`/uslugi/${service.slug}-pila`}
+                to={`/uslugi/${service.slug}-${siteConfig.slugBase}`}
                 className="group block"
               >
                 <div className="bg-white rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 group-hover:scale-105">
@@ -46,7 +47,7 @@ const Elektryka = () => {
                     {service.name}
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Profesjonalna {service.name.toLowerCase()} w Pile z gwarancją
+                    Profesjonalne {service.name.toLowerCase()} w Starej Wiśniewce z gwarancją
                   </p>
                   <div className="flex items-center text-blue group-hover:underline">
                     <span>Zobacz szczegóły</span>
@@ -76,4 +77,4 @@ const Elektryka = () => {
   );
 };
 
-export default Elektryka;
+export default SpawaNaprawy;

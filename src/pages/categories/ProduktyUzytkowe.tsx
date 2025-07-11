@@ -4,41 +4,41 @@ import { Footer } from "@/components/Footer";
 import { ServiceBreadcrumb } from "@/components/ServiceBreadcrumb";
 import { siteConfig } from "@/config/siteConfig";
 
-const Wulkanizacja = () => {
-  const category = siteConfig.categories.find(cat => cat.slug === "wulkanizacja");
-  const services = siteConfig.services.filter(service => service.parentCategorySlug === "wulkanizacja");
+const ProduktyUzytkowe = () => {
+  const category = siteConfig.categories.find(cat => cat.slug === "produkty-uzytkowe");
+  const services = siteConfig.services.filter(service => service.parentCategorySlug === "produkty-uzytkowe");
 
   return (
     <div className="min-h-screen">
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <ServiceBreadcrumb categoryName="Wulkanizacja" categorySlug="wulkanizacja" />
+        <ServiceBreadcrumb categoryName="Produkty użytkowe" categorySlug="produkty-uzytkowe" />
         
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">
-            Wulkanizacja Piła – Serwis FORDZIK
+            Produkty użytkowe Stara Wiśniewka – SEB-STAL-SPAW
           </h1>
           <div className="prose prose-lg max-w-none">
             <p className="text-muted-foreground mb-6">
-              Profesjonalna wulkanizacja Piła w Serwisie FORDZIK - wymiana opon, wyważanie kół, 
-              naprawa ogumienia. Obsługujemy opony osobowe, dostawcze oraz ciężarowe. 
-              Szybka wymiana opon sezonowa z profesjonalnym wyważaniem na nowoczesnych maszynach.
+              Profesjonalne produkty użytkowe Stara Wiśniewka w SEB-STAL-SPAW - wytwarzanie 
+              praktycznych elementów stalowych. Oferujemy kratki ochronne na okna, osłony 
+              techniczne, obudowy oraz inne produkty użytkowe ze stali.
             </p>
             <p className="text-muted-foreground mb-6">
-              Oferujemy kompleksowe usługi wulkanizacyjne - od wymiany pojedynczych opon, 
-              przez wyważanie kół, po naprawę uszkodzeń i przecięć. Dysponujemy magazynem 
-              opon renomowanych marek oraz oferujemy przechowywanie opon sezonowych.
+              Specjalizujemy się w produkcji funkcjonalnych elementów stalowych dla przemysłu 
+              i gospodarstw domowych. Wykonujemy kratki ochronne, osłony maszyn, obudowy techniczne 
+              oraz inne produkty według specyfikacji klienta. Każdy element objęty jest gwarancją jakości.
             </p>
           </div>
         </div>
 
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-foreground mb-6">Usługi wulkanizacyjne</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Produkty stalowe użytkowe</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {services.map((service) => (
               <Link
                 key={service.slug}
-                to={`/uslugi/${service.slug}-pila`}
+                to={`/uslugi/${service.slug}-${siteConfig.slugBase}`}
                 className="group block"
               >
                 <div className="bg-white rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 group-hover:scale-105">
@@ -46,7 +46,7 @@ const Wulkanizacja = () => {
                     {service.name}
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Profesjonalne {service.name.toLowerCase()} w Pile z gwarancją
+                    Profesjonalne {service.name.toLowerCase()} w Starej Wiśniewce z gwarancją
                   </p>
                   <div className="flex items-center text-blue group-hover:underline">
                     <span>Zobacz szczegóły</span>
@@ -76,4 +76,4 @@ const Wulkanizacja = () => {
   );
 };
 
-export default Wulkanizacja;
+export default ProduktyUzytkowe;

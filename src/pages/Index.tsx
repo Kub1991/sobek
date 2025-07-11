@@ -13,27 +13,27 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": siteConfig.businessName,
-    "description": `Profesjonalny warsztat samochodowy w ${siteConfig.city}. Kompleksowa obsługa, diagnostyka, naprawy z gwarancją.`,
-    "url": "https://auto-expert-pila.pl",
+    "description": `Profesjonalne usługi spawalnicze i ślusarskie w ${siteConfig.city}. Projekt, produkcja i montaż konstrukcji stalowych, balustrad, bram i mebli loftowych.`,
+    "url": "https://seb-stal-spaw.pl",
     "telephone": siteConfig.phone,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "ul. Przemysłowa 12",
+      "streetAddress": "ul. Główna 15",
       "addressLocality": siteConfig.city,
-      "postalCode": "64-920",
+      "postalCode": "89-113",
       "addressCountry": "PL"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "53.1516",
-      "longitude": "16.7380"
+      "latitude": "53.2516",
+      "longitude": "17.8380"
     },
     "openingHours": [
       "Mo-Fr 08:00-17:00",
       "Sa 08:00-14:00"
     ],
     "priceRange": "$$",
-    "image": "https://auto-expert-pila.pl/workshop-image.jpg"
+    "image": "https://seb-stal-spaw.pl/welding-workshop.jpg"
   };
 
   const faqSchema = {
@@ -42,34 +42,34 @@ const Index = () => {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Czy oferujecie odbiór auta w dzielnicy Górne?",
+        "name": "Czy oferujecie bezpłatny pomiar w promieniu 60 km?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tak! Odbieramy i zwracamy samochody w całej Pile, w tym w dzielnicy Górne. Usługa jest bezpłatna w promieniu miasta."
+          "text": "Tak! Oferujemy bezpłatny pomiar i wycenę w promieniu 60 km od naszej siedziby w Starej Wiśniewce. Po tym dystansie naliczamy symboliczną opłatę za dojazd."
         }
       },
       {
         "@type": "Question",
-        "name": "Ile kosztuje diagnoza komputerowa?",
+        "name": "Ile kosztuje wycena projektu?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Podstawowa diagnoza jest GRATIS i trwa około 15 minut. W przypadku bardziej zaawansowanej diagnostyki informujemy o kosztach przed rozpoczęciem."
+          "text": "Wycena standardowych projektów jest GRATIS. W przypadku bardziej skomplikowanych konstrukcji na zamówienie informujemy o koszcie projektu przed rozpoczęciem prac."
         }
       },
       {
         "@type": "Question",
-        "name": "Czy naprawiacie wszystkie marki samochodów?",
+        "name": "Czy wykonujecie projekty ze stali nierdzewnej?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Tak, naprawiamy wszystkie marki - od popularnych jak VW, Opel, Ford, po premium jak BMW, Audi, Mercedes. Mamy odpowiedni sprzęt diagnostyczny."
+          "text": "Tak, wykonujemy konstrukcje zarówno ze stali czarnej jak i nierdzewnej. Oferujemy również malowanie proszkowe w różnych kolorach RAL oraz patynowanie."
         }
       },
       {
         "@type": "Question",
-        "name": "Jak długo trwa wymiana oleju?",
+        "name": "Jak długo trwa realizacja projektu?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Standardowa wymiana oleju to około 30-45 minut. Jeśli chcesz poczekać, przygotowujemy kawę. Możesz też zostawić auto i odebrać później."
+          "text": "Czas realizacji zależy od złożoności projektu. Standardowe balustrady to 7-14 dni, bramy i konstrukcje większe to 2-4 tygodnie. Terminy ustalamy indywidualnie."
         }
       }
     ]
@@ -80,8 +80,8 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <SeoHead 
-        title={`Serwis Ford ${siteConfig.city} | Specjalistyczny warsztat Ford`}
-        description={`${siteConfig.businessName} to specjalistyczny serwis Ford w ${siteConfig.city}. Doświadczeni mechanicy, nowoczesny sprzęt, członek sieci ProfiAuto. Umów się online lub zadzwoń ${siteConfig.phone}`}
+        title={`Usługi spawalnicze ${siteConfig.city} | ${siteConfig.businessName}`}
+        description={`${siteConfig.businessName} to profesjonalne usługi spawalnicze i ślusarskie w ${siteConfig.city}. Projekt, produkcja i montaż konstrukcji stalowych. Bezpłatny pomiar w promieniu 60 km. Zadzwoń ${siteConfig.phone}`}
         structuredData={combinedSchema}
       />
       <Header />

@@ -4,41 +4,41 @@ import { Footer } from "@/components/Footer";
 import { ServiceBreadcrumb } from "@/components/ServiceBreadcrumb";
 import { siteConfig } from "@/config/siteConfig";
 
-const WymianaOleju = () => {
-  const category = siteConfig.categories.find(cat => cat.slug === "wymiana-oleju");
-  const services = siteConfig.services.filter(service => service.parentCategorySlug === "wymiana-oleju");
+const MebleLoft = () => {
+  const category = siteConfig.categories.find(cat => cat.slug === "meble-loft");
+  const services = siteConfig.services.filter(service => service.parentCategorySlug === "meble-loft");
 
   return (
     <div className="min-h-screen">
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <ServiceBreadcrumb categoryName="Wymiana oleju" categorySlug="wymiana-oleju" />
+        <ServiceBreadcrumb categoryName="Meble loft & dekoracje" categorySlug="meble-loft" />
         
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-4">
-            Wymiana oleju Piła – Serwis FORDZIK
+            Meble loft & dekoracje Stara Wiśniewka – SEB-STAL-SPAW
           </h1>
           <div className="prose prose-lg max-w-none">
             <p className="text-muted-foreground mb-6">
-              Profesjonalna wymiana oleju Piła w Serwisie FORDZIK. Używamy wyłącznie wysokiej 
-              jakości olejów silnikowych renomowanych marek. Szybka i precyzyjna wymiana oleju 
-              z filtrem, kontrola płynów eksploatacyjnych w cenie usługi.
+              Profesjonalne meble loft & dekoracje Stara Wiśniewka w SEB-STAL-SPAW - projektowanie 
+              i produkcja mebli w stylu industrialnym. Oferujemy stoły loft z blatami drewnianymi, 
+              półki industrialne oraz dekoracyjne elementy metalowe.
             </p>
             <p className="text-muted-foreground mb-6">
-              Oferujemy kompleksową obsługę - wymianę oleju silnikowego, filtra oleju, kontrolę 
-              poziomu wszystkich płynów oraz bezpłatną diagnostykę podstawowych układów pojazdu. 
-              Każda wymiana oleju objęta jest gwarancją oraz kartą serwisową.
+              Specjalizujemy się w tworzeniu unikalnych mebli łączących stal z drewnem. 
+              Oferujemy stoły, półki, lampy, donice oraz inne elementy dekoracyjne w stylu loft. 
+              Każdy mebel wykonujemy na zamówienie według indywidualnych potrzeb klienta.
             </p>
           </div>
         </div>
 
         <div className="mb-12">
-          <h2 className="text-2xl font-bold text-foreground mb-6">Usługi wymiany oleju</h2>
+          <h2 className="text-2xl font-bold text-foreground mb-6">Meble industrialne</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {services.map((service) => (
               <Link
                 key={service.slug}
-                to={`/uslugi/${service.slug}-pila`}
+                to={`/uslugi/${service.slug}-${siteConfig.slugBase}`}
                 className="group block"
               >
                 <div className="bg-white rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 group-hover:scale-105">
@@ -46,7 +46,7 @@ const WymianaOleju = () => {
                     {service.name}
                   </h3>
                   <p className="text-muted-foreground mb-4">
-                    Profesjonalna {service.name.toLowerCase()} w Pile z gwarancją
+                    Profesjonalne {service.name.toLowerCase()} w Starej Wiśniewce z gwarancją
                   </p>
                   <div className="flex items-center text-blue group-hover:underline">
                     <span>Zobacz szczegóły</span>
@@ -76,4 +76,4 @@ const WymianaOleju = () => {
   );
 };
 
-export default WymianaOleju;
+export default MebleLoft;

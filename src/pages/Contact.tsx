@@ -14,9 +14,9 @@ const Contact = () => {
       "telephone": siteConfig.phone,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "ul. Przemysłowa 12",
+        "streetAddress": "ul. Główna 15",
         "addressLocality": siteConfig.city,
-        "postalCode": "64-920",
+        "postalCode": "89-113",
         "addressCountry": "PL"
       }
     }
@@ -26,7 +26,7 @@ const Contact = () => {
     <div className="min-h-screen">
       <SeoHead 
         title={`Kontakt – ${siteConfig.businessName} ${siteConfig.city}`}
-        description={`Skontaktuj się z ${siteConfig.businessName} w ${siteConfig.city}. Tel: ${siteConfig.phone}, ul. Przemysłowa 12. Formularz kontaktowy, mapa dojazdu. Pon-Pt: 8:00-17:00, Sob: 8:00-14:00.`}
+        description={`Skontaktuj się z ${siteConfig.businessName} w ${siteConfig.city}. Tel: ${siteConfig.phone}, ul. Główna 15. Formularz kontaktowy, mapa dojazdu. Pon-Pt: 8:00-17:00, Sob: 8:00-14:00.`}
         structuredData={contactSchema}
       />
       <Header />
@@ -34,7 +34,7 @@ const Contact = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-6">
-              Kontakt – Serwis FORDZIK Piła
+              Kontakt – SEB-STAL-SPAW Stara Wiśniewka
             </h1>
             <p className="text-xl text-muted-foreground">
               Skontaktuj się z nami - chętnie pomożemy!
@@ -66,8 +66,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground">Adres</p>
-                    <p className="text-muted-foreground">ul. Przemysłowa 12</p>
-                    <p className="text-muted-foreground">64-920 Piła</p>
+                    <p className="text-muted-foreground">ul. Główna 15</p>
+                    <p className="text-muted-foreground">89-113 Stara Wiśniewka</p>
                   </div>
                 </div>
 
@@ -135,14 +135,14 @@ const Contact = () => {
               </h2>
               <div className="bg-gray-200 rounded-2xl h-96 flex items-center justify-center mb-6">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2394.123456789!2d16.123456!3d53.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDA3JzI0LjQiTiAxNsKwMDcnMjQuNCJF!5e0!3m2!1spl!2spl!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2394.123456789!2d17.123456!3d53.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDA3JzI0LjQiTiAxN8KwMDcnMjQuNCJF!5e0!3m2!1spl!2spl!4v1234567890"
                   width="100%"
                   height="100%"
                   style={{ border: 0, borderRadius: '1rem' }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Auto-Expert Piła - lokalizacja"
+                  title="SEB-STAL-SPAW Stara Wiśniewka - lokalizacja"
                 />
               </div>
               
@@ -151,10 +151,10 @@ const Contact = () => {
                   Dojazd i parking
                 </h3>
                 <div className="space-y-3 text-muted-foreground">
-                  <p>• Dogodny dojazd z centrum Piły</p>
+                  <p>• Dogodny dojazd z centrum Starej Wiśniewki</p>
                   <p>• Bezpłatny parking dla klientów</p>
-                  <p>• Możliwość odbioru i zwrotu auta</p>
-                  <p>• Dostęp komunikacją miejską</p>
+                  <p>• Możliwość transportu konstrukcji</p>
+                  <p>• Plac do rozładunku materiałów</p>
                 </div>
               </div>
             </div>

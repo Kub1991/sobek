@@ -9,8 +9,8 @@ export const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">{siteConfig.businessName}</h3>
             <p className="text-gray-300 mb-4">
-              Specjalistyczny serwis Ford w Pile. Wyspecjalizowani mechanicy, 
-              nowoczesny sprzęt, członek sieci ProfiAuto.
+              Profesjonalne usługi spawalnicze i ślusarskie w Starej Wiśniewce. 
+              Projekt, produkcja i montaż konstrukcji stalowych.
             </p>
             <p className="text-blue font-semibold">{siteConfig.phone}</p>
           </div>
@@ -21,7 +21,7 @@ export const Footer = () => {
               {siteConfig.categories.slice(0, 5).map((category) => (
                 <li key={category.slug}>
                   <Link
-                    to={`/uslugi/${category.slug}-pila`}
+                    to={`/uslugi/${category.slug}-${siteConfig.slugBase}`}
                     className="text-gray-300 hover:text-blue transition-colors"
                   >
                     {category.name}
@@ -54,8 +54,8 @@ export const Footer = () => {
 
           <div>
             <h4 className="font-semibold mb-4">Lokalizacja</h4>
-            <p className="text-gray-300 mb-2">ul. Przemysłowa 12</p>
-            <p className="text-gray-300 mb-4">64-920 Piła</p>
+            <p className="text-gray-300 mb-2">ul. Główna 15</p>
+            <p className="text-gray-300 mb-4">89-113 Stara Wiśniewka</p>
             <div className="space-y-2">
               <p className="text-gray-300">Pon-Pt: 8:00-17:00</p>
               <p className="text-gray-300">Sob: 8:00-14:00</p>
@@ -68,7 +68,7 @@ export const Footer = () => {
             © 2024 {siteConfig.businessName}. Wszystkie prawa zastrzeżone.
           </p>
           <p className="text-gray-300 mt-4 md:mt-0">
-            Serwis samochodowy Ford Piła
+            Usługi spawalnicze i ślusarskie Stara Wiśniewka
           </p>
         </div>
       </div>

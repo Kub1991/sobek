@@ -10,22 +10,20 @@ import ServicesPage from "./pages/ServicesPage";
 import NotFound from "./pages/NotFound";
 
 // Category pages
-import Hamulce from "./pages/categories/Hamulce";
-import Klimatyzacja from "./pages/categories/Klimatyzacja";
-import WymianaOlejuCategory from "./pages/categories/WymianaOleju";
-import Zawieszenie from "./pages/categories/Zawieszenie";
-import DiagnostykaKomputerowa from "./pages/categories/DiagnostykaKomputerowa";
-import Wulkanizacja from "./pages/categories/Wulkanizacja";
-import Elektryka from "./pages/categories/Elektryka";
-import PrzegladySerwisowe from "./pages/categories/PrzegladySerwisowe";
+import BalustradyOgrodzenia from "./pages/categories/BalustradyOgrodzenia";
+import BramyFurtki from "./pages/categories/BramyFurtki";
+import Konstrukcje from "./pages/categories/Konstrukcje";
+import MebleLoft from "./pages/categories/MebleLoft";
+import ProduktyUzytkowe from "./pages/categories/ProduktyUzytkowe";
+import SpawaNaprawy from "./pages/categories/SpawaNaprawy";
 
 // Service pages
-import WymianaKlockowHamulcowych from "./pages/services/WymianaKlockowHamulcowych";
-import RegeneracjaZaciskow from "./pages/services/RegeneracjaZaciskow";
-import DiagnostykaBenzyna from "./pages/services/DiagnostykaBenzyna";
-import WymianaOleju from "./pages/services/WymianaOleju";
-import OdgrzybianieLimy from "./pages/services/OdgrzybianieLimy";
-import GeometriaKol from "./pages/services/GeometriaKol";
+import BalustradyBalkonowe from "./pages/services/BalustradyBalkonowe";
+import BalustradySchodowe from "./pages/services/BalustradySchodowe";
+import OgrodzeniaPostsyjne from "./pages/services/OgrodzeniaPostsyjne";
+import BramyPrzesuwne from "./pages/services/BramyPrzesuwne";
+import BramyDwuskrzydlowe from "./pages/services/BramyDwuskrzydlowe";
+import FurtkiOgrodowe from "./pages/services/FurtkiOgrodowe";
 
 const queryClient = new QueryClient();
 
@@ -42,22 +40,20 @@ const App = () => (
           <Route path="/kontakt" element={<Contact />} />
           
           {/* Category pages */}
-          <Route path="/uslugi/hamulce-pila" element={<Hamulce />} />
-          <Route path="/uslugi/klimatyzacja-pila" element={<Klimatyzacja />} />
-          <Route path="/uslugi/plyny-eksploatacyjne-pila" element={<WymianaOlejuCategory />} />
-          <Route path="/uslugi/zawieszenie-pila" element={<Zawieszenie />} />
-          <Route path="/uslugi/diagnostyka-komputerowa-pila" element={<DiagnostykaKomputerowa />} />
-          <Route path="/uslugi/wulkanizacja-pila" element={<Wulkanizacja />} />
-          <Route path="/uslugi/elektryka-pila" element={<Elektryka />} />
-          <Route path="/uslugi/przeglady-serwisowe-pila" element={<PrzegladySerwisowe />} />
+          <Route path="/uslugi/balustrady-ogrodzenia-stara-wisniewka" element={<BalustradyOgrodzenia />} />
+          <Route path="/uslugi/bramy-furtki-stara-wisniewka" element={<BramyFurtki />} />
+          <Route path="/uslugi/konstrukcje-stara-wisniewka" element={<Konstrukcje />} />
+          <Route path="/uslugi/meble-loft-stara-wisniewka" element={<MebleLoft />} />
+          <Route path="/uslugi/produkty-uzytkowe-stara-wisniewka" element={<ProduktyUzytkowe />} />
+          <Route path="/uslugi/spawanie-naprawy-stara-wisniewka" element={<SpawaNaprawy />} />
           
           {/* Service pages */}
-          <Route path="/uslugi/wymiana-klockow-pila" element={<WymianaKlockowHamulcowych />} />
-          <Route path="/uslugi/regeneracja-zaciskow-pila" element={<RegeneracjaZaciskow />} />
-          <Route path="/uslugi/diagnostyka-benzyna-pila" element={<DiagnostykaBenzyna />} />
-          <Route path="/uslugi/wymiana-oleju-pila" element={<WymianaOleju />} />
-          <Route path="/uslugi/odgrzybianie-klimy-pila" element={<OdgrzybianieLimy />} />
-          <Route path="/uslugi/geometria-kol-pila" element={<GeometriaKol />} />
+          <Route path="/uslugi/balustrady-balkonowe-stara-wisniewka" element={<BalustradyBalkonowe />} />
+          <Route path="/uslugi/balustrady-schodowe-stara-wisniewka" element={<BalustradySchodowe />} />
+          <Route path="/uslugi/ogrodzenia-posesyjne-stara-wisniewka" element={<OgrodzeniaPostsyjne />} />
+          <Route path="/uslugi/bramy-przesuwne-stara-wisniewka" element={<BramyPrzesuwne />} />
+          <Route path="/uslugi/bramy-dwuskrzydlowe-stara-wisniewka" element={<BramyDwuskrzydlowe />} />
+          <Route path="/uslugi/furtki-ogrodowe-stara-wisniewka" element={<FurtkiOgrodowe />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

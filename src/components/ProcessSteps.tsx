@@ -1,18 +1,18 @@
 const steps = [
   {
     number: "01",
-    title: "Rezerwacja",
-    description: "Umów się online w 60 sekund lub zadzwoń. Opisz problem - pomożemy ocenić pilność naprawy."
+    title: "Wycena",
+    description: "Umów się online w 60 sekund lub zadzwoń. Opisz projekt - pomożemy oszacować koszt i termin realizacji."
   },
   {
     number: "02", 
-    title: "Diagnoza",
-    description: "GRATIS diagnoza w 15 minut. Dokładnie sprawdzamy auto i informujemy o wszystkich usterkach."
+    title: "Projekt i produkcja",
+    description: "GRATIS pomiar i projekt. Dokładnie mierzymy wymiary i projektujemy konstrukcję w 3D."
   },
   {
     number: "03",
-    title: "Naprawa z gwarancją",
-    description: "Profesjonalna naprawa z 2-letnią gwarancją na części i robociznę. Stały kontakt SMS/WhatsApp."
+    title: "Montaż z gwarancją",
+    description: "Profesjonalny montaż z 3-letnią gwarancją na spawy i powłoki. Stały kontakt SMS/WhatsApp."
   }
 ];
 
@@ -25,7 +25,7 @@ export const ProcessSteps = () => {
             Jak to działa?
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Proces naprawy w 3 prostych krokach
+            Realizacja projektu w 3 prostych krokach
           </p>
         </div>
 

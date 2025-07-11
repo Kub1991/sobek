@@ -8,9 +8,9 @@ interface ServicesGridProps {
 export const ServicesGrid = ({ variant = "home" }: ServicesGridProps) => {
   const getDescription = (categoryName: string) => {
     if (variant === "home") {
-      return `Profesjonalne usługi ${categoryName.toLowerCase()}`;
+      return `Profesjonalna ${categoryName.toLowerCase()}`;
     } else {
-      return `Kompleksowe usługi ${categoryName.toLowerCase()} w Pile z gwarancją jakości i profesjonalnym doradztwo`;
+      return `Kompleksowa ${categoryName.toLowerCase()} w Starej Wiśniewce z gwarancją jakości i profesjonalnym doradztwem`;
     }
   };
 
@@ -22,7 +22,7 @@ export const ServicesGrid = ({ variant = "home" }: ServicesGridProps) => {
             Nasze specjalizacje
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Kompleksowe usługi mechaniczne w Pile
+            Kompleksowe usługi spawalnicze i ślusarskie w Starej Wiśniewce
           </p>
         </div>
 
@@ -30,7 +30,7 @@ export const ServicesGrid = ({ variant = "home" }: ServicesGridProps) => {
           {siteConfig.categories.map((category) => (
             <Link
               key={category.slug}
-              to={`/uslugi/${category.slug}-pila`}
+              to={`/uslugi/${category.slug}-${siteConfig.slugBase}`}
               className="group block"
             >
               <div className="bg-white rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 group-hover:scale-105">

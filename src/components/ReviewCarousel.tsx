@@ -5,40 +5,40 @@ const reviews = [
     id: 1,
     name: "Marcin K.",
     rating: 5,
-    text: "Szybka diagnoza, uczciwe ceny i profesjonalna obsługa. Polecam Serwis FORDZIK każdemu kierowcy w Pile!",
-    service: "Wymiana klocków hamulcowych",
+    text: "Szybka wycena, uczciwe ceny i profesjonalna obsługa. Polecam SEB-STAL-SPAW każdemu w Starej Wiśniewce!",
+    service: "Balustrada balkonowa",
     imageUrl: "https://images.pexels.com/photos/3807386/pexels-photo-3807386.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     id: 2,
     name: "Anna W.", 
     rating: 5,
-    text: "Odbiór auta z domu i zwrot po naprawie - mega wygodne! Klimatyzacja działa jak nowa.",
-    service: "Odgrzybianie klimatyzacji",
+    text: "Bezpłatny pomiar i transport konstrukcji - mega wygodne! Brama działa idealnie.",
+    service: "Brama przesuwna z automatyką",
     imageUrl: "https://images.pexels.com/photos/1170412/pexels-photo-1170412.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     id: 3,
     name: "Piotr S.",
     rating: 5,
-    text: "2 lata gwarancji na wszystkie części! Takiej pewności siebie w swojej pracy szukałem.",
-    service: "Naprawa alternatora",
+    text: "3 lata gwarancji na spawy i powłoki! Takiej pewności siebie w swojej pracy szukałem.",
+    service: "Konstrukcja schodów stalowych",
     imageUrl: "https://images.pexels.com/photos/3862627/pexels-photo-3862627.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     id: 4,
     name: "Katarzyna M.",
     rating: 5,
-    text: "Stały kontakt SMS podczas naprawy - zawsze wiedziałam co się dzieje z moim autem.",
-    service: "Diagnostyka komputerowa",
+    text: "Stały kontakt SMS podczas realizacji - zawsze wiedziałam na jakim etapie jest mój projekt.",
+    service: "Pergola stalowa",
     imageUrl: "https://images.pexels.com/photos/4489702/pexels-photo-4489702.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   },
   {
     id: 5,
     name: "Tomasz L.",
     rating: 5,
-    text: "Darmowa diagnoza w 15 minut! Szybko znaleźli problem i naprawili w tym samym dniu.",
-    service: "Wymiana oleju",
+    text: "Darmowa wycena w 15 minut! Szybko oszacowali koszt i zrealizowali w terminie.",
+    service: "Stół loft z blatem dębowym",
     imageUrl: "https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop"
   }
 ];
@@ -72,7 +72,7 @@ export const ReviewCarousel = () => {
             Nasze realizacje i opinie klientów
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Zobacz efekty naszej pracy i poznaj opinie zadowolonych klientów z Piły
+            Zobacz efekty naszej pracy i poznaj opinie zadowolonych klientów ze Starej Wiśniewki
           </p>
         </div>
 
@@ -90,7 +90,7 @@ export const ReviewCarousel = () => {
                       <div className="relative h-80 lg:h-auto">
                         <img 
                           src={review.imageUrl} 
-                          alt={`${review.service} - realizacja w Serwisie FORDZIK`}
+                          alt={`${review.service} - realizacja w SEB-STAL-SPAW`}
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute bottom-4 left-4 bg-black/70 text-white px-3 py-2 rounded-lg">
@@ -112,7 +112,7 @@ export const ReviewCarousel = () => {
                           </div>
                           <div>
                             <p className="font-bold text-foreground text-lg">{review.name}</p>
-                            <p className="text-blue text-sm font-medium">Klient z Piły</p>
+                            <p className="text-blue text-sm font-medium">Klient ze Starej Wiśniewki</p>
                           </div>
                         </div>
                       </div>
@@ -163,17 +163,17 @@ export const ReviewCarousel = () => {
           <div className="bg-gradient-hero text-white rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold mb-4">Dołącz do grona zadowolonych klientów!</h3>
             <p className="text-lg mb-6 opacity-90">
-              Umów wizytę już dziś i przekonaj się o jakości naszych usług
+              Umów pomiar już dziś i przekonaj się o jakości naszych realizacji
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="bg-white text-blue px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                Umów wizytę online
+                Umów pomiar online
               </button>
               <a 
-                href="tel:67-123-45-67" 
+                href={`tel:${siteConfig.phone}`}
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue transition-colors"
               >
-                Zadzwoń: 67-123-45-67
+                Zadzwoń: {siteConfig.phone}
               </a>
             </div>
           </div>
