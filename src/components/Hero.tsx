@@ -1,4 +1,5 @@
 import { Button } from "./Button";
+import { Phone } from "lucide-react";
 import { siteConfig } from "@/config/siteConfig";
 
 const heroImage = "https://images.pexels.com/photos/3862627/pexels-photo-3862627.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop";
@@ -18,11 +19,17 @@ export const Hero = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              Usługi spawalnicze Stara Wiśniewka – {siteConfig.businessName}
+            <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+              Balustrady i ogrodzenia stalowe – Seb-Stal-Spaw, Złotów i okolice
             </h1>
-            <p className="text-xl mb-8 opacity-90">
-              Profesjonalne spawalnictwo i ślusarstwo w Starej Wiśniewce. Doświadczenie, precyzja i najwyższa jakość.
+            <h2 className="text-2xl lg:text-3xl font-semibold mb-4 opacity-90">
+              Projekt, spawanie i montaż na wymiar. Bezpłatny pomiar do 60 km.
+            </h2>
+            <p className="mt-2 flex items-center gap-2 text-lg font-semibold mb-8">
+              <Phone className="w-5 h-5" />
+              <a href="tel:+48786618536" className="hover:underline">
+                +48 786 618 536
+              </a>
             </p>
             
             <div className="grid sm:grid-cols-2 gap-4 mb-8">
