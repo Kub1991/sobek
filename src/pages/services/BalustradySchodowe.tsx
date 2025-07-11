@@ -1,0 +1,194 @@
+import { SeoHead } from "@/components/SeoHead";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { ServiceBreadcrumb } from "@/components/ServiceBreadcrumb";
+import { ServiceForm } from "@/components/ServiceForm";
+import { RelatedServices } from "@/components/RelatedServices";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { siteConfig } from "@/config/siteConfig";
+
+const BalustradySchodowe = () => {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `Balustrady schodowe wewnętrzne ${siteConfig.city}`,
+    "description": `Profesjonalne balustrady schodowe wewnętrzne w ${siteConfig.city}. Stal czarna i nierdzewna, malowanie proszkowe, 3-letnia gwarancja.`,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": siteConfig.businessName,
+      "telephone": siteConfig.phone,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": siteConfig.city
+      }
+    },
+    "areaServed": siteConfig.city,
+    "serviceType": "Stair Railings Installation",
+    "offers": {
+      "@type": "Offer",
+      "priceRange": "300-1000 PLN/mb",
+      "availability": "http://schema.org/InStock"
+    }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Jak długo trwa montaż balustrady schodowej w Starej Wiśniewce?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Montaż standardowej balustrady schodowej trwa 2-3 dni robocze. Czas zależy od długości balustrady i stopnia skomplikowania projektu."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Czy wykonujecie balustrady na schody kręte?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tak, wykonujemy balustrady na schody kręte, spiralne i o nietypowych kształtach. Każda balustrada projektowana jest indywidualnie."
+        }
+      }
+    ]
+  };
+
+  const combinedSchema = [serviceSchema, faqSchema];
+
+  return (
+    <div className="min-h-screen">
+      <SeoHead 
+        title={`Balustrady schodowe wewnętrzne ${siteConfig.city} – ${siteConfig.businessName}`}
+        description={`Profesjonalne balustrady schodowe wewnętrzne ${siteConfig.city} w warsztacie ${siteConfig.businessName}. Stal czarna i nierdzewna, malowanie proszkowe w kolorach RAL, 3-letnia gwarancja. Bezpłatny pomiar w promieniu 60 km.`}
+        structuredData={combinedSchema}
+      />
+      <Header />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <ServiceBreadcrumb 
+          categoryName="Balustrady i ogrodzenia" 
+          categorySlug="balustrady-ogrodzenia"
+          serviceName="Balustrady schodowe wewnętrzne"
+        />
+        
+        <div className="grid lg:grid-cols-3 gap-8">
+          <div className="lg:col-span-2">
+            <h1 className="text-4xl font-bold text-foreground mb-6">
+              Balustrady schodowe wewnętrzne Stara Wiśniewka – SEB-STAL-SPAW
+            </h1>
+            
+            <div className="mb-8">
+              <img 
+                src="https://images.pexels.com/photos/3806288/pexels-photo-3806288.jpeg?auto=compress&cs=tinysrgb&w=800&h=400&fit=crop" 
+                alt="Balustrady schodowe wewnętrzne – zdjęcie poglądowe"
+                className="w-full h-64 object-cover rounded-2xl mb-6"
+              />
+            </div>
+
+            <div className="prose prose-lg max-w-none mb-8">
+              <p className="text-muted-foreground mb-4">
+                Profesjonalne balustrady schodowe wewnętrzne Stara Wiśniewka w SEB-STAL-SPAW. 
+                Bezpieczne i eleganckie balustrady schodowe to kluczowy element każdego wnętrza 
+                z antresolą lub piętrami. Nasze doświadczenie gwarantuje perfekcyjne dopasowanie 
+                do charakteru budynku i indywidualnych potrzeb.
+              </p>
+              <p className="text-muted-foreground mb-4">
+                Oferujemy balustrady schodowe proste, kręte i spiralne. Wykonujemy konstrukcje 
+                ze stali czarnej z malowaniem proszkowym oraz ze stali nierdzewnej. Możliwość 
+                łączenia metalu z drewnem, szkłem lub innymi materiałami. Czas realizacji: 10-21 dni.
+              </p>
+              <p className="text-muted-foreground">
+                Każda balustrada schodowa objęta jest 3-letnią gwarancją na spawy i powłoki. 
+                Oferujemy bezpłatny pomiar, projekt 3D oraz profesjonalny montaż z transportem 
+                w całej północnej Polsce.
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-6 shadow-card mb-8">
+              <h3 className="text-xl font-bold text-foreground mb-4">Cennik orientacyjny</h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left py-2">Rodzaj balustrady</th>
+                      <th className="text-left py-2">Cena od (za mb)</th>
+                      <th className="text-left py-2">Czas realizacji</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b">
+                      <td className="py-2">Balustrada prosta malowana</td>
+                      <td className="py-2 font-semibold">300 zł</td>
+                      <td className="py-2">10 dni</td>
+                    </tr>
+                    <tr className="border-b">
+                      <td className="py-2">Balustrada z wypełnieniem</td>
+                      <td className="py-2 font-semibold">450 zł</td>
+                      <td className="py-2">14 dni</td>
+                    </tr>
+                    <tr>
+                      <td className="py-2">Balustrada kręta nierdzewna</td>
+                      <td className="py-2 font-semibold">700 zł</td>
+                      <td className="py-2">21 dni</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <Accordion type="single" collapsible className="bg-white rounded-2xl shadow-card">
+              <AccordionItem value="item-1" className="px-6">
+                <AccordionTrigger>Jak długo trwa montaż balustrady schodowej w Starej Wiśniewce?</AccordionTrigger>
+                <AccordionContent>
+                  Montaż standardowej balustrady schodowej trwa 2-3 dni robocze. Czas zależy od długości 
+                  balustrady i stopnia skomplikowania projektu. Balustrady kręte mogą wymagać 4-5 dni.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2" className="px-6">
+                <AccordionTrigger>Czy wykonujecie balustrady na schody kręte?</AccordionTrigger>
+                <AccordionContent>
+                  Tak, wykonujemy balustrady na schody kręte, spiralne i o nietypowych kształtach. 
+                  Każda balustrada projektowana jest indywidualnie z dokładnym pomiarem i projektem 3D.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+
+            <RelatedServices 
+              currentSlug="balustrady-schodowe"
+              parentCategory="balustrady-ogrodzenia"
+            />
+          </div>
+
+          <div className="lg:col-span-1">
+            <ServiceForm serviceName="Balustrady schodowe wewnętrzne" />
+            
+            <div className="mt-8 bg-secondary rounded-2xl p-6">
+              <h3 className="text-lg font-bold text-foreground mb-4">Nasze zalety</h3>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-blue rounded-full mr-3"></span>
+                  Bezpłatny pomiar w 60 km
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-blue rounded-full mr-3"></span>
+                  3-letnia gwarancja
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-blue rounded-full mr-3"></span>
+                  Projekt 3D GRATIS
+                </li>
+                <li className="flex items-center">
+                  <span className="w-2 h-2 bg-blue rounded-full mr-3"></span>
+                  Schody kręte i spiralne
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default BalustradySchodowe;
