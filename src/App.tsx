@@ -43,6 +43,9 @@ const App = () => (
           <Route path="/o-nas" element={<AboutUs />} />
           <Route path="/kontakt" element={<Contact />} />
           
+          {/* Specific routing for /uslugi/ URLs */}
+          <Route path="/uslugi/:serviceSlug/:citySlug" element={<ServiceCity />} />
+          
           {/* Dynamic routing for services and cities */}
           <Route path="/:serviceSlug" element={<ServiceLayout />} />
           <Route path="/:serviceSlug/:citySlug" element={<ServiceCity />} />
