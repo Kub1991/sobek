@@ -33,7 +33,7 @@ export const ServiceBreadcrumb = ({
             <BreadcrumbItem>
               {serviceName ? (
                 <BreadcrumbLink asChild>
-                  <Link to={`/uslugi/${categorySlug}-pila`}>{categoryName}</Link>
+                  <Link to={`/${categorySlug}`}>{categoryName}</Link>
                 </BreadcrumbLink>
               ) : (
                 <BreadcrumbPage>{categoryName}</BreadcrumbPage>
