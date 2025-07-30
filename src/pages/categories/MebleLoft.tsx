@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SeoHead } from "@/components/SeoHead";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ServiceBreadcrumb } from "@/components/ServiceBreadcrumb";
@@ -8,8 +9,27 @@ const MebleLoft = () => {
   const category = siteConfig.categories.find(cat => cat.slug === "meble-loft");
   const services = siteConfig.services.filter(service => service.parentCategorySlug === "meble-loft");
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `Meble loft ${siteConfig.city}`,
+    "description": `Profesjonalne meble loft w ${siteConfig.city}. Stoły, półki, krzesła w stylu industrialnym ze stali i drewna.`,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": siteConfig.businessName,
+      "telephone": siteConfig.phone
+    },
+    "areaServed": siteConfig.city,
+    "serviceType": "Industrial Furniture"
+  };
+
   return (
     <div className="min-h-screen">
+      <SeoHead 
+        title={`Meble loft ${siteConfig.city} – ${siteConfig.businessName}`}
+        description={`Profesjonalne meble loft ${siteConfig.city} w warsztacie ${siteConfig.businessName}. Stoły, półki, krzesła w stylu industrialnym. Stal i drewno, ręczne wykonanie, 2-letnia gwarancja.`}
+        structuredData={serviceSchema}
+      />
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <ServiceBreadcrumb categoryName="Meble loft & dekoracje" categorySlug="meble-loft" />

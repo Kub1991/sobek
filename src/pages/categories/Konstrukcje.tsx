@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SeoHead } from "@/components/SeoHead";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ServiceBreadcrumb } from "@/components/ServiceBreadcrumb";
@@ -8,8 +9,27 @@ const Konstrukcje = () => {
   const category = siteConfig.categories.find(cat => cat.slug === "konstrukcje");
   const services = siteConfig.services.filter(service => service.parentCategorySlug === "konstrukcje");
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `Konstrukcje stalowe ${siteConfig.city}`,
+    "description": `Profesjonalne konstrukcje stalowe w ${siteConfig.city}. Zadaszenia, wiaty, pergole, schody stalowe.`,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": siteConfig.businessName,
+      "telephone": siteConfig.phone
+    },
+    "areaServed": siteConfig.city,
+    "serviceType": "Steel Structures"
+  };
+
   return (
     <div className="min-h-screen">
+      <SeoHead 
+        title={`Konstrukcje stalowe ${siteConfig.city} – ${siteConfig.businessName}`}
+        description={`Profesjonalne konstrukcje stalowe ${siteConfig.city} w warsztacie ${siteConfig.businessName}. Zadaszenia, wiaty, pergole, schody stalowe. Projekt, produkcja, montaż z 3-letnią gwarancją.`}
+        structuredData={serviceSchema}
+      />
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <ServiceBreadcrumb categoryName="Konstrukcje i zadaszenia" categorySlug="konstrukcje" />

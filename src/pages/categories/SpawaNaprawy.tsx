@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SeoHead } from "@/components/SeoHead";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ServiceBreadcrumb } from "@/components/ServiceBreadcrumb";
@@ -8,8 +9,27 @@ const SpawaNaprawy = () => {
   const category = siteConfig.categories.find(cat => cat.slug === "spawanie-naprawy");
   const services = siteConfig.services.filter(service => service.parentCategorySlug === "spawanie-naprawy");
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `Usługi spawalnicze ${siteConfig.city}`,
+    "description": `Profesjonalne usługi spawalnicze w ${siteConfig.city}. Spawanie TIG, MIG/MAG, naprawy konstrukcji stalowych.`,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": siteConfig.businessName,
+      "telephone": siteConfig.phone
+    },
+    "areaServed": siteConfig.city,
+    "serviceType": "Welding Services"
+  };
+
   return (
     <div className="min-h-screen">
+      <SeoHead 
+        title={`Usługi spawalnicze ${siteConfig.city} – ${siteConfig.businessName}`}
+        description={`Profesjonalne usługi spawalnicze ${siteConfig.city} w warsztacie ${siteConfig.businessName}. Spawanie TIG, MIG/MAG, naprawy konstrukcji stalowych. Certyfikowani spawacze, gwarancja jakości.`}
+        structuredData={serviceSchema}
+      />
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <ServiceBreadcrumb categoryName="Spawanie i naprawy" categorySlug="spawanie-naprawy" />

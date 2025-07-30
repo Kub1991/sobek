@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { SeoHead } from "@/components/SeoHead";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ServiceBreadcrumb } from "@/components/ServiceBreadcrumb";
@@ -8,8 +9,27 @@ const BramyFurtki = () => {
   const category = siteConfig.categories.find(cat => cat.slug === "bramy-furtki");
   const services = siteConfig.services.filter(service => service.parentCategorySlug === "bramy-furtki");
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `Bramy i furtki ${siteConfig.city}`,
+    "description": `Profesjonalne bramy i furtki w ${siteConfig.city}. Bramy przesuwne, dwuskrzydłowe, furtki ogrodowe z automatyką.`,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": siteConfig.businessName,
+      "telephone": siteConfig.phone
+    },
+    "areaServed": siteConfig.city,
+    "serviceType": "Gates and Fencing"
+  };
+
   return (
     <div className="min-h-screen">
+      <SeoHead 
+        title={`Bramy i furtki ${siteConfig.city} – ${siteConfig.businessName}`}
+        description={`Profesjonalne bramy i furtki ${siteConfig.city} w warsztacie ${siteConfig.businessName}. Bramy przesuwne z automatyką, dwuskrzydłowe, furtki ogrodowe. Stal czarna i nierdzewna, 3-letnia gwarancja.`}
+        structuredData={serviceSchema}
+      />
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <ServiceBreadcrumb categoryName="Bramy i furtki" categorySlug="bramy-furtki" />
