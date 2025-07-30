@@ -55,12 +55,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sebstalspaw.netlify.app/balustrady/zakrzewo</loc>
-    <lastmod>2025-07-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://sebstalspaw.netlify.app/ogrodzenia/zlotow</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -73,12 +67,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sebstalspaw.netlify.app/ogrodzenia/zakrzewo</loc>
-    <lastmod>2025-07-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://sebstalspaw.netlify.app/konstrukcje-stalowe/zlotow</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -86,6 +74,18 @@
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/konstrukcje-stalowe/pila</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sebstalspaw.netlify.app/meble-loft/zlotow</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sebstalspaw.netlify.app/meble-loft/pila</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -115,243 +115,243 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://sebstalspaw.netlify.app/balustrady/zakrzewo</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://sebstalspaw.netlify.app/balustrady/okonek</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/balustrady/debrzno</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/balustrady/chojnice</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/balustrady/krajenka</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/balustrady/jastrowie</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://sebstalspaw.netlify.app/balustrady/ledyczek</loc>
+    <loc>https://sebstalspaw.netlify.app/ogrodzenia/zakrzewo</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sebstalspaw.netlify.app/balustrady/walcz</loc>
-    <lastmod>2025-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/ogrodzenia/okonek</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/ogrodzenia/debrzno</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/ogrodzenia/chojnice</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/ogrodzenia/krajenka</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/ogrodzenia/jastrowie</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sebstalspaw.netlify.app/ogrodzenia/ledyczek</loc>
-    <lastmod>2025-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sebstalspaw.netlify.app/ogrodzenia/walcz</loc>
-    <lastmod>2025-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/konstrukcje-stalowe/zakrzewo</loc>
     <lastmod>2025-07-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/konstrukcje-stalowe/okonek</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/konstrukcje-stalowe/debrzno</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/konstrukcje-stalowe/chojnice</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/konstrukcje-stalowe/krajenka</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/konstrukcje-stalowe/jastrowie</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://sebstalspaw.netlify.app/meble-loft/zlotow</loc>
+    <loc>https://sebstalspaw.netlify.app/balustrady/ledyczek</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://sebstalspaw.netlify.app/meble-loft/pila</loc>
+    <loc>https://sebstalspaw.netlify.app/balustrady/walcz</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/zakrzewo</loc>
-    <lastmod>2025-07-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/okonek</loc>
+    <loc>https://sebstalspaw.netlify.app/ogrodzenia/ledyczek</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/debrzno</loc>
+    <loc>https://sebstalspaw.netlify.app/ogrodzenia/walcz</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/chojnice</loc>
-    <lastmod>2025-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/krajenka</loc>
-    <lastmod>2025-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/jastrowie</loc>
-    <lastmod>2025-07-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/konstrukcje-stalowe/ledyczek</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/konstrukcje-stalowe/walcz</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/meble-loft/zakrzewo</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/meble-loft/okonek</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/meble-loft/debrzno</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/meble-loft/chojnice</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/meble-loft/krajenka</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/meble-loft/jastrowie</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/meble-loft/ledyczek</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/meble-loft/walcz</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/zakrzewo</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/okonek</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/debrzno</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/chojnice</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/krajenka</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/jastrowie</loc>
+    <lastmod>2025-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/ledyczek</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sebstalspaw.netlify.app/uslugi-spawalnicze/walcz</loc>
     <lastmod>2025-07-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.4</priority>
   </url>
 </urlset>

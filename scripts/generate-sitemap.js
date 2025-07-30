@@ -45,16 +45,16 @@ const siteConfig = {
   // Obsługiwane miasta (poziom 2)
   cities: [
     // Główne miasta - wyższy priorytet
-    { slug: "zlotow", name: "Złotów", priority: "0.7", changefreq: "weekly" },
-    { slug: "pila", name: "Piła", priority: "0.7", changefreq: "weekly" },
-    { slug: "zakrzewo", name: "Zakrzewo", priority: "0.6", changefreq: "weekly" },
+    { slug: "zlotow", name: "Złotów", priority: "0.8", changefreq: "weekly" },
+    { slug: "pila", name: "Piła", priority: "0.8", changefreq: "weekly" },
+    { slug: "zakrzewo", name: "Zakrzewo", priority: "0.6", changefreq: "monthly" },
     
     // Pozostałe miasta - niższy priorytet
-    { slug: "okonek", name: "Okonek", priority: "0.5", changefreq: "monthly" },
-    { slug: "debrzno", name: "Debrzno", priority: "0.5", changefreq: "monthly" },
-    { slug: "chojnice", name: "Chojnice", priority: "0.5", changefreq: "monthly" },
-    { slug: "krajenka", name: "Krajenka", priority: "0.5", changefreq: "monthly" },
-    { slug: "jastrowie", name: "Jastrowie", priority: "0.5", changefreq: "monthly" },
+    { slug: "okonek", name: "Okonek", priority: "0.6", changefreq: "monthly" },
+    { slug: "debrzno", name: "Debrzno", priority: "0.6", changefreq: "monthly" },
+    { slug: "chojnice", name: "Chojnice", priority: "0.6", changefreq: "monthly" },
+    { slug: "krajenka", name: "Krajenka", priority: "0.6", changefreq: "monthly" },
+    { slug: "jastrowie", name: "Jastrowie", priority: "0.6", changefreq: "monthly" },
     { slug: "ledyczek", name: "Lędyczek", priority: "0.4", changefreq: "monthly" },
     { slug: "walcz", name: "Wałcz", priority: "0.4", changefreq: "monthly" }
   ]
@@ -118,15 +118,32 @@ function generateSitemap() {
   
   siteConfig.services.forEach(service => {
     siteConfig.cities.forEach(city => {
-      // Priorytet kombinowany: średnia z priorytetu usługi i miasta
-      const servicePriority = parseFloat(service.priority);
-      const cityPriority = parseFloat(city.priority);
-      const combinedPriority = ((servicePriority + cityPriority) / 2).toFixed(1);
+      // Strategiczne priorytety dla kombinacji kategoria×miasto
+      let combinedPriority;
       
-      // Częstotliwość: bierz bardziej konserwatywną (monthly jeśli którakolwiek jest monthly)
-      const combinedChangefreq = (service.changefreq === 'monthly' || city.changefreq === 'monthly') 
-        ? 'monthly' 
-        : 'weekly';
+      // Top miasta (Złotów, Piła) - najwyższy priorytet
+      if (city.slug === 'zlotow' || city.slug === 'pila') {
+        combinedPriority = '0.8';
+      }
+      // Kategorie balustrady i ogrodzenia w pozostałych miastach
+      else if ((service.slug === 'balustrady' || service.slug === 'ogrodzenia') && 
+               ['zakrzewo', 'okonek', 'debrzno', 'chojnice', 'krajenka', 'jastrowie'].includes(city.slug)) {
+        combinedPriority = '0.6';
+      }
+      // Konstrukcje stalowe w średnich miastach
+      else if (service.slug === 'konstrukcje-stalowe' && 
+               ['zakrzewo', 'okonek', 'debrzno', 'chojnice', 'krajenka', 'jastrowie'].includes(city.slug)) {
+        combinedPriority = '0.5';
+      }
+      // Najmniej strategiczne kombinacje (meble-loft, usługi-spawalnicze w małych miejscowościach)
+      else {
+        combinedPriority = '0.4';
+      }
+      
+      // Częstotliwość: weekly tylko dla top miast (Złotów, Piła), reszta monthly
+      const combinedChangefreq = (city.slug === 'zlotow' || city.slug === 'pila') 
+        ? 'weekly' 
+        : 'monthly';
       
       urls.push({
         loc: `${BASE_URL}/${service.slug}/${city.slug}`,
