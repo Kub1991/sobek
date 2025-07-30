@@ -27,18 +27,18 @@ export const ServicesGrid = ({ variant = "home" }: ServicesGridProps) => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {siteConfig.categories.map((category) => (
+          {siteConfig.services.map((service) => (
             <Link
-              key={category.slug}
-              to={`/uslugi/${category.slug}-${siteConfig.slugBase}`}
+              key={service.slug}
+              to={`/${service.slug}`}
               className="group block"
             >
               <div className="bg-white rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 group-hover:scale-105">
                 <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-blue transition-colors">
-                  {category.name}
+                  {service.name}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {getDescription(category.name)}
+                  {getDescription(service.name)}
                 </p>
                 <div className="flex items-center text-blue group-hover:underline">
                   <span>Zobacz usługi</span>
