@@ -46,9 +46,19 @@ export const SeoHead = ({
           ? `${currentService.name} ${currentCity.name}`
           : `${currentService.name} ${siteConfig.city}`;
           
-        const serviceDescription = currentCity
-          ? `Profesjonalne ${currentService.name.toLowerCase()} w ${currentCity.name}. ${siteConfig.businessName} oferuje kompleksowe usługi spawalnicze z bezpłatnym pomiarem.`
-          : `Profesjonalne ${currentService.name.toLowerCase()} w ${siteConfig.city}. ${siteConfig.businessName} oferuje kompleksowe usługi spawalnicze.`;
+        // Generowanie zindywidualizowanego opisu
+        let serviceDescription;
+        
+        if (currentCity && currentService.localDesc && currentService.localDesc[currentCity.slug]) {
+          // Użyj lokalnego opisu dla konkretnego miasta
+          serviceDescription = currentService.localDesc[currentCity.slug];
+        } else if (currentCity) {
+          // Fallback dla miasta bez lokalnego opisu
+          serviceDescription = `Profesjonalne ${currentService.name.toLowerCase()} w ${currentCity.name}. ${siteConfig.businessName} oferuje kompleksowe usługi spawalnicze z bezpłatnym pomiarem w promieniu 60 km. Projekt, produkcja i montaż z 3-letnią gwarancją na spawy i powłoki. Obsługujemy klientów indywidualnych i firmy, zapewniając najwyższą jakość wykonania i terminowość realizacji.`;
+        } else {
+          // Opis dla kategorii głównej (bez miasta)
+          serviceDescription = `Profesjonalne ${currentService.name.toLowerCase()} w ${siteConfig.city}. ${siteConfig.businessName} oferuje kompleksowe usługi spawalnicze i ślusarskie z 3-letnią gwarancją. Projekt, produkcja i montaż konstrukcji stalowych z najwyższej jakości materiałów. Bezpłatny pomiar w promieniu 60 km od ${siteConfig.city}.`;
+        }
           
         const areaServed = currentCity ? currentCity.name : siteConfig.city;
         
