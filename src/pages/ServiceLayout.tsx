@@ -39,7 +39,7 @@ const ServiceLayout = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             <h1 className="text-4xl font-bold text-foreground mb-6">
-              {service.name} {siteConfig.city} – {siteConfig.businessName}
+              {service.name}
             </h1>
             
             <div className="mb-8">
