@@ -46,8 +46,8 @@ const KonstrukcjePage = () => {
 
             <div className="prose prose-lg max-w-none mb-8">
               <p className="text-muted-foreground mb-4">
-                Profesjonalne {service.name.toLowerCase()} {siteConfig.city} w {siteConfig.businessName}. 
-                Oferujemy kompleksowe usługi z zakresu {service.group.toLowerCase()}, 
+                Profesjonalne {(service?.name || '').toLowerCase()} {siteConfig.city} w {siteConfig.businessName}. 
+                Oferujemy kompleksowe usługi z zakresu {(service?.group || '').toLowerCase()}, 
                 łącząc tradycyjne techniki spawalnicze z nowoczesnymi rozwiązaniami.
               </p>
               <p className="text-muted-foreground mb-4">
@@ -65,7 +65,7 @@ const KonstrukcjePage = () => {
                     <CardHeader>
                       <CardTitle className="text-lg">{subservice.name}</CardTitle>
                       <CardDescription>
-                        Profesjonalna {subservice.name.toLowerCase()} w {siteConfig.city} z 3-letnią gwarancją
+                        Profesjonalna {(subservice?.name || '').toLowerCase()} w {siteConfig.city} z 3-letnią gwarancją
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
