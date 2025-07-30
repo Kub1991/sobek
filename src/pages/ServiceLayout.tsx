@@ -20,30 +20,13 @@ const ServiceLayout = () => {
     return <NotFound />;
   }
 
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `${service.name} ${siteConfig.city}`,
-    "description": `Profesjonalne ${service.name.toLowerCase()} w ${siteConfig.city}. ${siteConfig.businessName} oferuje kompleksowe usługi spawalnicze.`,
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": siteConfig.businessName,
-      "telephone": siteConfig.phone,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": siteConfig.city
-      }
-    },
-    "areaServed": siteConfig.city,
-    "serviceType": service.group
-  };
-
   return (
     <div className="min-h-screen">
       <SeoHead 
         title={`${service.name} – ${siteConfig.businessName}`}
         description={`Profesjonalne ${service.name.toLowerCase()}. ${siteConfig.businessName} oferuje kompleksowe usługi spawalnicze i ślusarskie z 3-letnią gwarancją.`}
-        structuredData={serviceSchema}
+        schemaType="service"
+        serviceData={service}
         noIndex={true}
       />
       <Header />

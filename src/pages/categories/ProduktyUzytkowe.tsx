@@ -9,18 +9,10 @@ const ProduktyUzytkowe = () => {
   const category = siteConfig.categories.find(cat => cat.slug === "produkty-uzytkowe");
   const services = siteConfig.services.filter(service => service.parentCategorySlug === "produkty-uzytkowe");
 
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `Produkty użytkowe stalowe ${siteConfig.city}`,
-    "description": `Profesjonalne produkty użytkowe stalowe w ${siteConfig.city}. Kratki ochronne, osłony techniczne, obudowy.`,
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": siteConfig.businessName,
-      "telephone": siteConfig.phone
-    },
-    "areaServed": siteConfig.city,
-    "serviceType": "Steel Utility Products"
+  // Tworzymy obiekt usługi dla kategorii produktów użytkowych
+  const categoryService = {
+    name: "Produkty użytkowe stalowe",
+    group: "Steel Utility Products"
   };
 
   return (
@@ -28,7 +20,8 @@ const ProduktyUzytkowe = () => {
       <SeoHead 
         title={`Produkty użytkowe stalowe ${siteConfig.city} – ${siteConfig.businessName}`}
         description={`Profesjonalne produkty użytkowe stalowe ${siteConfig.city} w warsztacie ${siteConfig.businessName}. Kratki ochronne, osłony techniczne, obudowy na wymiar z gwarancją jakości.`}
-        structuredData={serviceSchema}
+        schemaType="service"
+        serviceData={categoryService}
       />
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

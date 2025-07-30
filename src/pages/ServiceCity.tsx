@@ -19,29 +19,6 @@ const ServiceCity = () => {
     return <NotFound />;
   }
 
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `${service.name} ${city.name}`,
-    "description": `Profesjonalne ${service.name.toLowerCase()} w ${city.name}. ${siteConfig.businessName} oferuje kompleksowe usługi spawalnicze z bezpłatnym pomiarem.`,
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": siteConfig.businessName,
-      "telephone": siteConfig.phone,
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": city.name
-      }
-    },
-    "areaServed": city.name,
-    "serviceType": service.group,
-    "offers": {
-      "@type": "Offer",
-      "availability": "http://schema.org/InStock",
-      "priceRange": "$$"
-    }
-  };
-
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -65,14 +42,17 @@ const ServiceCity = () => {
     ]
   };
 
-  const combinedSchema = [serviceSchema, faqSchema];
+  const combinedSchema = [faqSchema];
 
   return (
     <div className="min-h-screen">
       <SeoHead 
         title={`${service.name} ${city.name} – ${siteConfig.businessName}`}
         description={`Profesjonalne ${service.name.toLowerCase()} ${city.name} w warsztacie ${siteConfig.businessName}. Bezpłatny pomiar, projekt 3D, montaż z 3-letnią gwarancją. Zadzwoń ${siteConfig.phone}.`}
-        structuredData={combinedSchema}
+        schemaType="custom"
+        serviceData={service}
+        cityData={city}
+        customStructuredData={combinedSchema}
         noIndex={true}
       />
       <Header />

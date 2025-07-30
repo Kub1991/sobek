@@ -5,33 +5,13 @@ import { ServicesGrid } from "@/components/ServicesGrid";
 import { siteConfig } from "@/config/siteConfig";
 
 const ServicesPage = () => {
-  const servicesSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": `Usługi spawalnicze ${siteConfig.city}`,
-    "description": `Kompleksowe usługi spawalnicze i ślusarskie w ${siteConfig.city}`,
-    "itemListElement": siteConfig.categories.map((category, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "item": {
-        "@type": "Service",
-        "name": category.name,
-        "description": `Profesjonalna ${category.name.toLowerCase()} w ${siteConfig.city}`,
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": siteConfig.businessName
-        }
-      }
-    }))
-  };
-
   return (
     <div className="min-h-screen">
       <SeoHead
         title="Usługi – SEB-STAL-SPAW | Balustrady, bramy, konstrukcje"
         description="Pełna lista naszych usług: balustrady balkonowe i schodowe, bramy i furtki, konstrukcje stalowe, meble loft. Umów pomiar online."
         canonical="/uslugi"
-        structuredData={servicesSchema}
+        schemaType="localBusiness"
       />
       <Header />
       <main className="py-16">

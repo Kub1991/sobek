@@ -10,33 +10,6 @@ import { Footer } from "@/components/Footer";
 import { siteConfig } from "@/config/siteConfig";
 
 const Index = () => {
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": siteConfig.businessName,
-    "description": `Profesjonalne usługi spawalnicze i ślusarskie w ${siteConfig.city}. Projekt, produkcja i montaż konstrukcji stalowych, balustrad, bram i mebli loftowych.`,
-    "url": "https://seb-stal-spaw.pl",
-    "telephone": siteConfig.phone,
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "ul. Główna 15",
-      "addressLocality": siteConfig.city,
-      "postalCode": "89-113",
-      "addressCountry": "PL"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "53.2516",
-      "longitude": "17.8380"
-    },
-    "openingHours": [
-      "Mo-Fr 08:00-17:00",
-      "Sa 08:00-14:00"
-    ],
-    "priceRange": "$$",
-    "image": "https://seb-stal-spaw.pl/welding-workshop.jpg"
-  };
-
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -76,14 +49,15 @@ const Index = () => {
     ]
   };
 
-  const combinedSchema = [localBusinessSchema, faqSchema];
+  const combinedSchema = [faqSchema];
 
   return (
     <div className="min-h-screen">
       <SeoHead 
         title={`Usługi spawalnicze | ${siteConfig.businessName}`}
         description={`${siteConfig.businessName} to profesjonalne usługi spawalnicze i ślusarskie w Starej Wiśniewce. Projekt, produkcja i montaż konstrukcji stalowych. Bezpłatny pomiar w promieniu 60 km. Zadzwoń ${siteConfig.phone}`}
-        structuredData={combinedSchema}
+        schemaType="custom"
+        customStructuredData={combinedSchema}
       />
       <Header />
       <main>

@@ -9,18 +9,10 @@ const Konstrukcje = () => {
   const category = siteConfig.categories.find(cat => cat.slug === "konstrukcje");
   const services = siteConfig.services.filter(service => service.parentCategorySlug === "konstrukcje");
 
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `Konstrukcje stalowe ${siteConfig.city}`,
-    "description": `Profesjonalne konstrukcje stalowe w ${siteConfig.city}. Zadaszenia, wiaty, pergole, schody stalowe.`,
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": siteConfig.businessName,
-      "telephone": siteConfig.phone
-    },
-    "areaServed": siteConfig.city,
-    "serviceType": "Steel Structures"
+  // Tworzymy obiekt usługi dla kategorii konstrukcji
+  const categoryService = {
+    name: "Konstrukcje stalowe",
+    group: "Steel Structures"
   };
 
   return (
@@ -28,7 +20,8 @@ const Konstrukcje = () => {
       <SeoHead 
         title={`Konstrukcje stalowe ${siteConfig.city} – ${siteConfig.businessName}`}
         description={`Profesjonalne konstrukcje stalowe ${siteConfig.city} w warsztacie ${siteConfig.businessName}. Zadaszenia, wiaty, pergole, schody stalowe. Projekt, produkcja, montaż z 3-letnią gwarancją.`}
-        structuredData={serviceSchema}
+        schemaType="service"
+        serviceData={categoryService}
       />
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

@@ -9,18 +9,10 @@ const BalustradyOgrodzenia = () => {
   const category = siteConfig.categories.find(cat => cat.slug === "balustrady-ogrodzenia");
   const services = siteConfig.services.filter(service => service.parentCategorySlug === "balustrady-ogrodzenia");
 
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": `Balustrady i ogrodzenia ${siteConfig.city}`,
-    "description": `Profesjonalne balustrady i ogrodzenia w ${siteConfig.city}. Stal czarna, nierdzewna, malowanie proszkowe, 3-letnia gwarancja.`,
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": siteConfig.businessName,
-      "telephone": siteConfig.phone
-    },
-    "areaServed": siteConfig.city,
-    "serviceType": "Metal Railings and Fencing"
+  // Tworzymy obiekt usługi dla kategorii balustrad
+  const categoryService = {
+    name: "Balustrady i ogrodzenia",
+    group: "Metal Railings and Fencing"
   };
 
   return (
@@ -28,7 +20,8 @@ const BalustradyOgrodzenia = () => {
       <SeoHead 
         title={`Balustrady i ogrodzenia ${siteConfig.city} – ${siteConfig.businessName}`}
         description={`Profesjonalne balustrady i ogrodzenia ${siteConfig.city} w warsztacie ${siteConfig.businessName}. Balustrady balkonowe, schodowe, ogrodzenia posesyjne. Stal czarna i nierdzewna, 3-letnia gwarancja.`}
-        structuredData={serviceSchema}
+        schemaType="service"
+        serviceData={categoryService}
       />
       <Header />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

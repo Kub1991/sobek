@@ -5,29 +5,12 @@ import { Button } from "@/components/Button";
 import { siteConfig } from "@/config/siteConfig";
 
 const Contact = () => {
-  const contactSchema = {
-    "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "mainEntity": {
-      "@type": "LocalBusiness",
-      "name": siteConfig.businessName,
-      "telephone": siteConfig.phone,
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "ul. Główna 15",
-        "addressLocality": siteConfig.city,
-        "postalCode": "89-113",
-        "addressCountry": "PL"
-      }
-    }
-  };
-
   return (
     <div className="min-h-screen">
       <SeoHead 
         title={`Kontakt – ${siteConfig.businessName}`}
         description={`Skontaktuj się z ${siteConfig.businessName} w Starej Wiśniewce. Tel: ${siteConfig.phone}, ul. Główna 15. Formularz kontaktowy, mapa dojazdu. Pon-Pt: 8:00-17:00, Sob: 8:00-14:00.`}
-        structuredData={contactSchema}
+        schemaType="contactPage"
       />
       <Header />
       <main className="py-16">

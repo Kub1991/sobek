@@ -5,18 +5,154 @@ import { siteConfig } from '@/config/siteConfig';
 interface SeoHeadProps {
   title?: string;
   description?: string;
-  structuredData?: object;
+  schemaType?: 'service' | 'localBusiness' | 'faq' | 'contactPage' | 'custom';
+  serviceData?: any; // Service object from siteConfig.services
+  cityData?: any; // City object from siteConfig.cities
+  customStructuredData?: object; // For custom schemas like FAQ, ContactPage
   canonical?: string;
   noIndex?: boolean;
   location?: string;
 }
 
-export const SeoHead = ({ title, description, structuredData, canonical, noIndex = false, location }: SeoHeadProps) => {
+export const SeoHead = ({ 
+  title, 
+  description, 
+  schemaType, 
+  serviceData, 
+  cityData, 
+  customStructuredData,
+  canonical, 
+  noIndex = false, 
+  location 
+}: SeoHeadProps) => {
   const { serviceSlug, citySlug } = useParams();
   
   // Znajdź service i city na podstawie slugów z URL
   const service = serviceSlug ? siteConfig.services.find(s => s.slug === serviceSlug) : null;
   const city = citySlug ? siteConfig.cities.find(c => c.slug === citySlug) : null;
+  
+  // Dynamiczne generowanie structuredData na podstawie schemaType
+  const generateStructuredData = () => {
+    if (!schemaType) return null;
+    
+    const currentService = serviceData || service;
+    const currentCity = cityData || city;
+    
+    switch (schemaType) {
+      case 'service':
+        if (!currentService) return null;
+        
+        const serviceName = currentCity 
+          ? `${currentService.name} ${currentCity.name}`
+          : `${currentService.name} ${siteConfig.city}`;
+          
+        const serviceDescription = currentCity
+          ? `Profesjonalne ${currentService.name.toLowerCase()} w ${currentCity.name}. ${siteConfig.businessName} oferuje kompleksowe usługi spawalnicze z bezpłatnym pomiarem.`
+          : `Profesjonalne ${currentService.name.toLowerCase()} w ${siteConfig.city}. ${siteConfig.businessName} oferuje kompleksowe usługi spawalnicze.`;
+          
+        const areaServed = currentCity ? currentCity.name : siteConfig.city;
+        
+        return {
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": serviceName,
+          "description": serviceDescription,
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": siteConfig.businessName,
+            "telephone": siteConfig.phone,
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": areaServed
+            }
+          },
+          "areaServed": areaServed,
+          "serviceType": currentService.group || currentService.name,
+          "offers": {
+            "@type": "Offer",
+            "availability": "http://schema.org/InStock",
+            "priceRange": "$$"
+          }
+        };
+        
+      case 'localBusiness':
+        return {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": siteConfig.businessName,
+          "description": `Profesjonalne usługi spawalnicze i ślusarskie w ${siteConfig.city}. Projekt, produkcja i montaż konstrukcji stalowych, balustrad, bram i mebli loftowych.`,
+          "url": "https://sebstalspaw.netlify.app",
+          "telephone": siteConfig.phone,
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ul. Główna 15",
+            "addressLocality": siteConfig.city,
+            "postalCode": "89-113",
+            "addressCountry": "PL"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "53.2516",
+            "longitude": "17.8380"
+          },
+          "openingHours": [
+            "Mo-Fr 08:00-17:00",
+            "Sa 08:00-14:00"
+          ],
+          "priceRange": "$$"
+        };
+        
+      case 'contactPage':
+        return {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "mainEntity": {
+            "@type": "LocalBusiness",
+            "name": siteConfig.businessName,
+            "telephone": siteConfig.phone,
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "ul. Główna 15",
+              "addressLocality": siteConfig.city,
+              "postalCode": "89-113",
+              "addressCountry": "PL"
+            }
+          }
+        };
+        
+      case 'faq':
+        return {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Czy oferujecie bezpłatny pomiar w promieniu 60 km?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Tak! Oferujemy bezpłatny pomiar i wycenę w promieniu 60 km od naszej siedziby w Starej Wiśniewce. Po tym dystansie naliczamy symboliczną opłatę za dojazd."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ile kosztuje wycena projektu?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Wycena standardowych projektów jest GRATIS. W przypadku bardziej skomplikowanych konstrukcji na zamówienie informujemy o koszcie projektu przed rozpoczęciem prac."
+              }
+            }
+          ]
+        };
+        
+      case 'custom':
+        return customStructuredData;
+        
+      default:
+        return null;
+    }
+  };
+  
+  const structuredData = generateStructuredData();
   
   // Generuj dynamiczny title i description jeśli nie zostały przekazane jako propsy
   let generatedTitle = title;
