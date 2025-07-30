@@ -80,8 +80,8 @@ const ServiceCity = () => {
 
             <div className="prose prose-lg max-w-none mb-8">
               <p className="text-muted-foreground mb-4">
-                Profesjonalne {(service?.name || '').toLowerCase()} {city.name} w {siteConfig.businessName}. 
-                Obsługujemy klientów w {city.name} i okolicach, oferując kompleksowe usługi z zakresu {(service?.group || '').toLowerCase()}.
+                Profesjonalne {service.name.toLowerCase()} {city.name} w {siteConfig.businessName}. 
+                Obsługujemy klientów w {city.name} i okolicach, oferując kompleksowe usługi z zakresu {service.group.toLowerCase()}.
                 Bezpłatny pomiar, projekt 3D i montaż z 3-letnią gwarancją.
               </p>
             </div>
@@ -94,7 +94,7 @@ const ServiceCity = () => {
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 {service.localDesc && service.localDesc[city.slug] 
                   ? service.localDesc[city.slug]
-                  : `Profesjonalne ${(service?.name || '').toLowerCase()} ${city.name} to nasza specjalność. W ${city.name} zrealizowaliśmy dziesiątki projektów dla klientów indywidualnych i firm. Nasze wieloletnie doświadczenie w ${city.name} pozwala nam oferować najwyższą jakość usług spawalniczych i ślusarskich. Mieszkańcy ${city.name} doceniają naszą rzetelność, terminowość i konkurencyjne ceny. Każdy projekt realizujemy z pełnym zaangażowaniem, wykorzystując najnowocześniejsze technologie spawalnicze i najwyższej jakości materiały. Oferujemy kompleksową obsługę - od pomiarów przez projekt aż po montaż z gwarancją.`
+                  : `Profesjonalne ${service.name.toLowerCase()} ${city.name} to nasza specjalność. W ${city.name} zrealizowaliśmy dziesiątki projektów dla klientów indywidualnych i firm. Nasze wieloletnie doświadczenie w ${city.name} pozwala nam oferować najwyższą jakość usług spawalniczych i ślusarskich. Mieszkańcy ${city.name} doceniają naszą rzetelność, terminowość i konkurencyjne ceny. Każdy projekt realizujemy z pełnym zaangażowaniem, wykorzystując najnowocześniejsze technologie spawalnicze i najwyższej jakości materiały. Oferujemy kompleksową obsługę - od pomiarów przez projekt aż po montaż z gwarancją.`
                 }
               </p>
             </div>
@@ -125,7 +125,7 @@ const ServiceCity = () => {
             <div className="bg-white rounded-2xl p-6 shadow-card mb-8">
               <h3 className="text-xl font-bold text-foreground mb-4">Usługi w kategorii {service.name}</h3>
               <div className="grid md:grid-cols-2 gap-4">
-                {service?.subservices?.map((subservice, index) => (
+                {service.subservices.map((subservice, index) => (
                   <div key={subservice.slug} className="flex items-start p-4 bg-secondary rounded-lg">
                     <div className="w-8 h-8 bg-gradient-hero text-white font-bold text-sm rounded-full flex items-center justify-center mr-3 mt-0.5">
                       {index + 1}
@@ -133,7 +133,7 @@ const ServiceCity = () => {
                     <div>
                       <h4 className="font-semibold text-foreground mb-2">{subservice.name}</h4>
                       <p className="text-sm text-muted-foreground">
-                        Dostępne w {city?.name} z bezpłatnym pomiarem i projektem
+                        Dostępne w {city.name} z bezpłatnym pomiarem i projektem
                       </p>
                     </div>
                   </div>
@@ -173,24 +173,24 @@ const ServiceCity = () => {
 
             <Accordion type="single" collapsible className="bg-white rounded-2xl shadow-card">
               <AccordionItem value="item-1" className="px-6">
-                <AccordionTrigger>Czy oferujecie {(service?.name || '').toLowerCase()} w {city?.name}?</AccordionTrigger>
+                <AccordionTrigger>Czy oferujecie {service.name.toLowerCase()} w {city.name}?</AccordionTrigger>
                 <AccordionContent>
-                  Tak, oferujemy profesjonalne {(service?.name || '').toLowerCase()} w {city?.name}. 
+                  Tak, oferujemy profesjonalne {service.name.toLowerCase()} w {city.name}. 
                   Zapewniamy bezpłatny pomiar, projekt i montaż z 3-letnią gwarancją na spawy i powłoki.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-2" className="px-6">
-                <AccordionTrigger>Ile kosztuje dojazd do {city?.name}?</AccordionTrigger>
+                <AccordionTrigger>Ile kosztuje dojazd do {city.name}?</AccordionTrigger>
                 <AccordionContent>
-                  Dojazd i pomiar w {city?.name} jest bezpłatny. Oferujemy bezpłatny pomiar w promieniu 60 km 
+                  Dojazd i pomiar w {city.name} jest bezpłatny. Oferujemy bezpłatny pomiar w promieniu 60 km 
                   od naszej siedziby w {siteConfig.city}.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="item-3" className="px-6">
-                <AccordionTrigger>Jak długo trwa realizacja w {city?.name}?</AccordionTrigger>
+                <AccordionTrigger>Jak długo trwa realizacja w {city.name}?</AccordionTrigger>
                 <AccordionContent>
-                  Czas realizacji zależy od rodzaju {(service?.name || '').toLowerCase()}. Standardowe projekty 
-                  to 7-21 dni roboczych. Dokładny termin ustalamy podczas bezpłatnego pomiaru w {city?.name}.
+                  Czas realizacji zależy od rodzaju {service.name.toLowerCase()}. Standardowe projekty 
+                  to 7-21 dni roboczych. Dokładny termin ustalamy podczas bezpłatnego pomiaru w {city.name}.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -200,11 +200,11 @@ const ServiceCity = () => {
             <ServiceForm serviceName={`${service.name} ${city.name}`} />
             
             <div className="mt-8 bg-secondary rounded-2xl p-6">
-              <h3 className="text-lg font-bold text-foreground mb-4">Obsługa {city?.name}</h3>
+              <h3 className="text-lg font-bold text-foreground mb-4">Obsługa {city.name}</h3>
               <ul className="space-y-3 text-sm">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-blue rounded-full mr-3"></span>
-                  Bezpłatny pomiar w {city?.name}
+                  Bezpłatny pomiar w {city.name}
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-blue rounded-full mr-3"></span>
@@ -222,10 +222,10 @@ const ServiceCity = () => {
               
               <div className="mt-6 pt-6 border-t border-gray-200">
                 <p className="text-sm text-muted-foreground mb-3">
-                  <strong>Czas dojazdu do {city?.name}:</strong> około 30-45 min
+                  <strong>Czas dojazdu do {city.name}:</strong> około 30-45 min
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  <strong>Obszar obsługi:</strong> {city?.name} + 15 km
+                  <strong>Obszar obsługi:</strong> {city.name} + 15 km
                 </p>
               </div>
             </div>

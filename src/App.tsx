@@ -20,13 +20,6 @@ import MebleLoft from "./pages/categories/MebleLoft";
 import ProduktyUzytkowe from "./pages/categories/ProduktyUzytkowe";
 import SpawaNaprawy from "./pages/categories/SpawaNaprawy";
 
-// Main category pages
-import BalustradyPage from "./pages/BalustradyPage";
-import OgrodzeniaPage from "./pages/OgrodzeniaPage";
-import KonstrukcjePage from "./pages/KonstrukcjePage";
-import MebleLoftPage from "./pages/MebleLoftPage";
-import UslugiSpawalniczne from "./pages/UslugiSpawalniczne";
-
 // Service pages
 import BalustradyBalkonowe from "./pages/services/BalustradyBalkonowe";
 import BalustradySchodowe from "./pages/services/BalustradySchodowe";
@@ -49,13 +42,6 @@ const App = () => (
           <Route path="/uslugi" element={<ServicesPage />} />
           <Route path="/o-nas" element={<AboutUs />} />
           <Route path="/kontakt" element={<Contact />} />
-          
-          {/* Main category pages */}
-          <Route path="/balustrady" element={<BalustradyPage />} />
-          <Route path="/ogrodzenia" element={<OgrodzeniaPage />} />
-          <Route path="/konstrukcje-stalowe" element={<KonstrukcjePage />} />
-          <Route path="/meble-loft" element={<MebleLoftPage />} />
-          <Route path="/uslugi-spawalnicze" element={<UslugiSpawalniczne />} />
           
           {/* Dynamic routing for services and cities */}
           <Route path="/:serviceSlug" element={<ServiceLayout />} />

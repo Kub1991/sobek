@@ -187,8 +187,8 @@ export const SeoHead = ({
   const structuredData = generateStructuredData();
   
   // Generuj dynamiczny title i description jeśli nie zostały przekazane jako propsy
-  let generatedTitle = title || '';
-  let generatedDescription = description || '';
+  let generatedTitle = title;
+  let generatedDescription = description;
   
   if (!title || !description) {
     if (service && city) {
