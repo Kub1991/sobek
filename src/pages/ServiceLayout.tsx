@@ -41,8 +41,8 @@ const ServiceLayout = () => {
   return (
     <div className="min-h-screen">
       <SeoHead 
-        title={`${service.name} ${siteConfig.city} – ${siteConfig.businessName}`}
-        description={`Profesjonalne ${service.name.toLowerCase()} w ${siteConfig.city}. ${siteConfig.businessName} oferuje kompleksowe usługi spawalnicze i ślusarskie z 3-letnią gwarancją.`}
+        title={`${service.name} – ${siteConfig.businessName}`}
+        description={`Profesjonalne ${service.name.toLowerCase()}. ${siteConfig.businessName} oferuje kompleksowe usługi spawalnicze i ślusarskie z 3-letnią gwarancją.`}
         structuredData={serviceSchema}
         noIndex={true}
       />

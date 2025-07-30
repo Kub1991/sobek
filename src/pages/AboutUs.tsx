@@ -8,7 +8,7 @@ const AboutUs = () => {
     <div className="min-h-screen">
       <SeoHead 
         title={`O nas – ${siteConfig.businessName}`}
-        description={`Poznaj zespół ${siteConfig.businessName}. Doświadczeni spawacze, nowoczesne technologie, 3-letnia gwarancja. Od 2018 roku realizujemy projekty stalowe.`}
+        description={`Poznaj zespół ${siteConfig.businessName} z Starej Wiśniewki. Doświadczeni spawacze, nowoczesne technologie, 3-letnia gwarancja. Od 2018 roku realizujemy projekty stalowe.`}
       />
       <Header />
       <main className="py-16">

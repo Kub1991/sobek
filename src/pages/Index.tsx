@@ -82,7 +82,7 @@ const Index = () => {
     <div className="min-h-screen">
       <SeoHead 
         title={`Usługi spawalnicze | ${siteConfig.businessName}`}
-        description={`${siteConfig.businessName} to profesjonalne usługi spawalnicze i ślusarskie. Projekt, produkcja i montaż konstrukcji stalowych. Bezpłatny pomiar w promieniu 60 km. Zadzwoń ${siteConfig.phone}`}
+        description={`${siteConfig.businessName} to profesjonalne usługi spawalnicze i ślusarskie w Starej Wiśniewce. Projekt, produkcja i montaż konstrukcji stalowych. Bezpłatny pomiar w promieniu 60 km. Zadzwoń ${siteConfig.phone}`}
         structuredData={combinedSchema}
       />
       <Header />

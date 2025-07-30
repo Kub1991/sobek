@@ -8,9 +8,10 @@ interface SeoHeadProps {
   structuredData?: object;
   canonical?: string;
   noIndex?: boolean;
+  location?: string;
 }
 
-export const SeoHead = ({ title, description, structuredData, canonical, noIndex = false }: SeoHeadProps) => {
+export const SeoHead = ({ title, description, structuredData, canonical, noIndex = false, location }: SeoHeadProps) => {
   const { serviceSlug, citySlug } = useParams();
   
   // Znajdź service i city na podstawie slugów z URL
@@ -58,7 +59,7 @@ export const SeoHead = ({ title, description, structuredData, canonical, noIndex
         };
         
         const pageKey = `${service.slug}-${city.slug}`;
-        generatedDescription = keywordOptimizedDescriptions[pageKey] || `${service.name} ${city.name}. Projekt, produkcja i montaż – bezpłatny pomiar w promieniu 60 km od ${siteConfig.city}.`;
+        generatedDescription = keywordOptimizedDescriptions[pageKey] || `${service.name} ${city.name}. Projekt, produkcja i montaż – bezpłatny pomiar w promieniu 60 km.`;
       }
     } else if (service && !city) {
       // Wzorzec: /[serviceSlug]
@@ -66,7 +67,7 @@ export const SeoHead = ({ title, description, structuredData, canonical, noIndex
         generatedTitle = `${service.name} | ${siteConfig.businessName}`;
       }
       if (!description) {
-        generatedDescription = `Profesjonalne ${service.name.toLowerCase()} w ${siteConfig.city}. Kompleksowe usługi spawalnicze i ślusarskie z 3-letnią gwarancją.`;
+        generatedDescription = `Profesjonalne ${service.name.toLowerCase()}. Kompleksowe usługi spawalnicze i ślusarskie z 3-letnią gwarancją.`;
       }
     } else {
       // Pozostałe ścieżki - użyj wartości domyślnych
@@ -76,11 +77,16 @@ export const SeoHead = ({ title, description, structuredData, canonical, noIndex
       if (!description) {
         generatedDescription = siteConfig.seoDefault.description;
       }
-      generatedDescription = `Profesjonalne ${service.name.toLowerCase()}. Kompleksowe usługi spawalnicze i ślusarskie z 3-letnią gwarancją.`;
     }
   }
   
-  const fullTitle = generatedTitle?.includes(siteConfig.businessName) ? generatedTitle : `${generatedTitle} – ${siteConfig.businessName}`;
+  // Dodaj location suffix tylko jeśli został przekazany
+  let titleWithLocation = generatedTitle;
+  if (location && !generatedTitle?.includes(location)) {
+    titleWithLocation = `${generatedTitle} ${location}`;
+  }
+  
+  const fullTitle = titleWithLocation?.includes(siteConfig.businessName) ? titleWithLocation : `${titleWithLocation} – ${siteConfig.businessName}`;
   
   return (
     <Helmet>
