@@ -25,10 +25,40 @@ export const SeoHead = ({ title, description, structuredData, canonical, noIndex
     if (service && city) {
       // Wzorzec: /[serviceSlug]/[citySlug]
       if (!title) {
-        generatedTitle = `${service.name} ${city.name} | ${siteConfig.businessName}`;
+        // Optymalizowane Meta Title dla kluczowych miast
+        const keywordOptimizedTitles = {
+          'balustrady-zlotow': `Balustrady Złotów - Balkonowe i Schodowe | ${siteConfig.businessName}`,
+          'balustrady-pila': `Balustrady Piła - Stalowe na Wymiar | ${siteConfig.businessName}`,
+          'balustrady-chojnice': `Balustrady Chojnice - Projekt i Montaż | ${siteConfig.businessName}`,
+          'balustrady-okonek': `Balustrady Okonek - Stal Nierdzewna | ${siteConfig.businessName}`,
+          'balustrady-jastrowie': `Balustrady Jastrowie - Malowanie RAL | ${siteConfig.businessName}`,
+          'ogrodzenia-zlotow': `Ogrodzenia Złotów - Posesyjne i Bramy | ${siteConfig.businessName}`,
+          'ogrodzenia-pila': `Ogrodzenia Piła - Stalowe z Automatyką | ${siteConfig.businessName}`,
+          'ogrodzenia-chojnice': `Ogrodzenia Chojnice - Projekt i Montaż | ${siteConfig.businessName}`,
+          'ogrodzenia-okonek': `Ogrodzenia Okonek - Stal Nierdzewna | ${siteConfig.businessName}`,
+          'ogrodzenia-jastrowie': `Ogrodzenia Jastrowie - Malowanie RAL | ${siteConfig.businessName}`
+        };
+        
+        const pageKey = `${service.slug}-${city.slug}`;
+        generatedTitle = keywordOptimizedTitles[pageKey] || `${service.name} ${city.name} | ${siteConfig.businessName}`;
       }
       if (!description) {
-        generatedDescription = `${service.name} ${city.name}. Projekt, produkcja i montaż – bezpłatny pomiar w promieniu 60 km od ${siteConfig.city}.`;
+        // Optymalizowane Meta Description dla kluczowych miast
+        const keywordOptimizedDescriptions = {
+          'balustrady-zlotow': `Balustrady Złotów ⭐ Balkonowe, schodowe, tarasowe. Stal czarna i nierdzewna, malowanie RAL. Bezpłatny pomiar, 3-letnia gwarancja. Tel: ${siteConfig.phone}`,
+          'balustrady-pila': `Balustrady Piła ⭐ Projekt 3D GRATIS, montaż w 7-14 dni. Stal nierdzewna, malowanie proszkowe. Bezpłatny dojazd. Tel: ${siteConfig.phone}`,
+          'balustrady-chojnice': `Balustrady Chojnice ⭐ Balkonowe i schodowe na wymiar. Projekt, produkcja, montaż. 3-letnia gwarancja na spawy. Tel: ${siteConfig.phone}`,
+          'balustrady-okonek': `Balustrady Okonek ⭐ Stal nierdzewna i czarna. Bezpłatny pomiar w promieniu 60km. Profesjonalny montaż. Tel: ${siteConfig.phone}`,
+          'balustrady-jastrowie': `Balustrady Jastrowie ⭐ Malowanie proszkowe RAL, stal nierdzewna. Projekt 3D, montaż z gwarancją. Tel: ${siteConfig.phone}`,
+          'ogrodzenia-zlotow': `Ogrodzenia Złotów ⭐ Posesyjne, bramy przesuwne z automatyką. Stal czarna/nierdzewna. Bezpłatny pomiar. Tel: ${siteConfig.phone}`,
+          'ogrodzenia-pila': `Ogrodzenia Piła ⭐ Bramy automatyczne, przęsła stalowe. Projekt, montaż, serwis. 3-letnia gwarancja. Tel: ${siteConfig.phone}`,
+          'ogrodzenia-chojnice': `Ogrodzenia Chojnice ⭐ Posesyjne z elementami ozdobnymi. Projekt, produkcja, montaż. Bezpłatny dojazd. Tel: ${siteConfig.phone}`,
+          'ogrodzenia-okonek': `Ogrodzenia Okonek ⭐ Stal nierdzewna, malowanie RAL. Bramy, furtki, przęsła. Profesjonalny montaż. Tel: ${siteConfig.phone}`,
+          'ogrodzenia-jastrowie': `Ogrodzenia Jastrowie ⭐ Malowanie proszkowe, automatyka bram. Bezpłatny pomiar w 60km. Tel: ${siteConfig.phone}`
+        };
+        
+        const pageKey = `${service.slug}-${city.slug}`;
+        generatedDescription = keywordOptimizedDescriptions[pageKey] || `${service.name} ${city.name}. Projekt, produkcja i montaż – bezpłatny pomiar w promieniu 60 km od ${siteConfig.city}.`;
       }
     } else if (service && !city) {
       // Wzorzec: /[serviceSlug]
