@@ -87,26 +87,6 @@ const ServiceLayout = () => {
               </div>
             </div>
 
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Dostępne lokalizacje</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                {siteConfig.cities.map((city) => (
-                  <Link
-                    key={city.slug}
-                    to={`/${service.slug}/${city.slug}`}
-                    className="block p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow border"
-                  >
-                    <div className="text-center">
-                      <h3 className="font-semibold text-foreground">{city.name}</h3>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {service.name}
-                      </p>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-
             <CitiesLinks serviceSlug={service.slug} />
 
             <div className="bg-secondary rounded-2xl p-8">
