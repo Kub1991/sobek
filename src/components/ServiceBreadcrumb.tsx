@@ -25,7 +25,13 @@ export const ServiceBreadcrumb = ({
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
             <Link to="/">Strona główna</Link>
-              <Link to={`/${categorySlug}`}>{categoryName}</Link>
+          </BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbLink asChild>
+            <Link to={`/${categorySlug}`}>{categoryName}</Link>
+          </BreadcrumbLink>
         </BreadcrumbItem>
         {categoryName && categorySlug && (
           <>
