@@ -88,7 +88,7 @@ const ServiceLayout = () => {
             </div>
 
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-foreground mb-6">Obsługiwane miasta</h2>
+              <h2 className="text-2xl font-bold text-foreground mb-6">Dostępne lokalizacje</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {siteConfig.cities.map((city) => (
                   <Link

@@ -15,6 +15,15 @@ const ServicesPage = () => {
       />
       <Header />
       <main className="py-16">
+        <nav className="bg-white border-b border-gray-200 -mt-16 pt-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <a href="/" className="hover:text-blue transition-colors">Strona główna</a>
+              <span>›</span>
+              <span className="font-medium text-foreground">Usługi</span>
+            </div>
+          </div>
+        </nav>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-foreground mb-6">

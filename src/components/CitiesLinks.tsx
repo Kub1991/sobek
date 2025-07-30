@@ -14,9 +14,9 @@ export const CitiesLinks = ({ serviceSlug }: CitiesLinksProps) => {
 
   return (
     <div className="bg-white rounded-2xl p-6 shadow-card">
-      <h3 className="text-xl font-bold text-foreground mb-6">
-        Obsługiwane miasta
-      </h3>
+      <h2 className="text-2xl font-bold text-foreground mb-6">
+        Obsługiwane lokalizacje
+      </h2>
       
       {/* Główne 3 miasta */}
       <div className="grid md:grid-cols-3 gap-4 mb-6">
@@ -28,9 +28,9 @@ export const CitiesLinks = ({ serviceSlug }: CitiesLinksProps) => {
           >
             <div className="bg-secondary rounded-2xl p-4 shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300">
               <div className="text-center">
-                <h4 className="font-semibold text-foreground group-hover:text-blue transition-colors">
+                <h3 className="font-semibold text-foreground group-hover:text-blue transition-colors">
                   {city.name}
-                </h4>
+                </h3>
                 <p className="text-sm text-muted-foreground mt-2">
                   Bezpłatny pomiar i wycena
                 </p>
@@ -52,8 +52,8 @@ export const CitiesLinks = ({ serviceSlug }: CitiesLinksProps) => {
 
       {/* Pozostałe miasta - rozwijane */}
       {showAll && (
-        <div className="mt-6 pt-6 border-t border-gray-200">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          </h3>
+          <h3 className="text-lg font-bold text-foreground mb-4 text-center">
             {otherCities.map((city) => (
               <Link
                 key={city.slug}

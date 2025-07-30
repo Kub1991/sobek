@@ -22,7 +22,7 @@ export const SeoHead = ({
   cityData, 
   customStructuredData,
   canonical, 
-  noIndex = false, 
+  noIndex = false,
   location 
 }: SeoHeadProps) => {
   const { serviceSlug, citySlug } = useParams();
@@ -30,6 +30,28 @@ export const SeoHead = ({
   // Znajdź service i city na podstawie slugów z URL
   const service = serviceSlug ? siteConfig.services.find(s => s.slug === serviceSlug) : null;
   const city = citySlug ? siteConfig.cities.find(c => c.slug === citySlug) : null;
+  
+  // Generuj pełny canonical URL
+  const generateCanonicalUrl = () => {
+    const baseUrl = "https://sebstalspaw.netlify.app";
+    if (canonical) {
+      return canonical.startsWith('http') ? canonical : `${baseUrl}${canonical}`;
+    }
+    
+    // Automatyczne generowanie canonical na podstawie ścieżki
+    const currentPath = window.location.pathname;
+    return `${baseUrl}${currentPath}`;
+  };
+  
+  // Określ robots meta tag
+  const getRobotsTag = () => {
+    // Dla stron kategoria+miasto i kategorii głównych: index,follow
+    if (service || serviceSlug) {
+      return "index,follow";
+    }
+    // Dla pozostałych stron: domyślnie index,follow, chyba że noIndex=true
+    return noIndex ? "noindex,nofollow" : "index,follow";
+  };
   
   // Dynamiczne generowanie structuredData na podstawie schemaType
   const generateStructuredData = () => {
@@ -234,18 +256,21 @@ export const SeoHead = ({
   
   const fullTitle = titleWithLocation?.includes(siteConfig.businessName) ? titleWithLocation : `${titleWithLocation} – ${siteConfig.businessName}`;
   
+  const robotsTag = getRobotsTag();
+  const canonicalUrl = generateCanonicalUrl();
+  
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={generatedDescription} />
-      {noIndex && <meta name="robots" content="noindex,nofollow" />}
+      <meta name="robots" content={robotsTag} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={generatedDescription} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={generatedDescription} />
-      {canonical && <link rel="canonical" href={canonical} />}
+      <link rel="canonical" href={canonicalUrl} />
       {structuredData && (
         <script type="application/ld+json">
           {JSON.stringify(structuredData)}
