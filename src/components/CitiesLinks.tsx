@@ -52,8 +52,11 @@ export const CitiesLinks = ({ serviceSlug }: CitiesLinksProps) => {
 
       {/* Pozostałe miasta - rozwijane */}
       {showAll && (
-          </h3>
+        <div className="mt-6">
           <h3 className="text-lg font-bold text-foreground mb-4 text-center">
+            Pozostałe obszary obsługi
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {otherCities.map((city) => (
               <Link
                 key={city.slug}
