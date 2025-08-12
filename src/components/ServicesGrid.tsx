@@ -5,6 +5,18 @@ interface ServicesGridProps {
   variant?: "home" | "catalog";
 }
 
+const getServiceImage = (serviceSlug: string) => {
+  const imageMap = {
+    'balustrady': '/hero-workshop.jpg',
+    'ogrodzenia': '/ogrodzenie1.jpg', 
+    'konstrukcje-stalowe': '/konstrukcjestalowe.jpg',
+    'meble-loft': '/meble loft.jpg',
+    'uslugi-spawalnicze': '/spawanie.jpg'
+  };
+  
+  return imageMap[serviceSlug] || '/hero-workshop.jpg';
+};
+
 export const ServicesGrid = ({ variant = "home" }: ServicesGridProps) => {
   const getDescription = (categoryName: string) => {
     if (variant === "home") {
@@ -34,6 +46,13 @@ export const ServicesGrid = ({ variant = "home" }: ServicesGridProps) => {
               className="group block"
             >
               <div className="bg-white rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 group-hover:scale-105">
+                <div className="mb-4 overflow-hidden rounded-xl">
+                  <img 
+                    src={getServiceImage(service.slug)}
+                    alt={`${service.name} - ${siteConfig.businessName}`}
+                    className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                </div>
                 <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-blue transition-colors">
                   {service.name}
                 </h3>
